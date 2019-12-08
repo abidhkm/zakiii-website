@@ -1,5 +1,6 @@
 import * as React from "react";
 import { render } from "react-dom";
+import { Game } from "./containers";
 import "./style";
 
 export const App: React.SFC<{}> = () => {
@@ -13,8 +14,6 @@ export const App: React.SFC<{}> = () => {
 };
 
 render(
-  <App />,
+  <Game boardSize={11} playerSize={25} />,
   document.getElementById("app-container"),
 );
-
-document.title = "{|page title|}";

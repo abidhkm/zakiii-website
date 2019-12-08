@@ -12,13 +12,11 @@ const t9config = require("./t9config.json");
 const isDevelopment = (process.env.NODE_ENV === "development");
 const isProduction = (process.env.NODE_ENV === "production");
 const port = process.env.DEV_SERVER_PORT || 8080;
-const appsPathLength = (__dirname + "/src/apps/").length;
 const webpackConfigArray = [];
 
 // match replacement function
-const replacement = (language) => function (match) {
+const replacement = (language, app) => function (match) {
   // we have: language, file path, placeholder, app
-  const app = this.resourcePath.substring(appsPathLength, this.resourcePath.indexOf("/", appsPathLength));
   const placeholder = match.slice(2, -2);
 
   // try to get from overwrites
@@ -74,13 +72,6 @@ const pushWebpackConfig = (language, app) => {
     mode: isProduction ? "production" : (isDevelopment ? "development" : "none"),
     module: {
       rules: [
-        // https://github.com/jamesandersen/string-replace-webpack-plugin
-        {
-          test: /\.[tj]sx?$/,
-          loader: StringReplacePlugin.replace({
-            replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
-          }),
-        },
         // https://github.com/microsoft/TypeScript-Babel-Starter#create-a-webpackconfigjs
         { exclude: /node_modules/, loader: "babel-loader", test: /\.tsx?$/ },
         // https://webpack.js.org/loaders/source-map-loader/
@@ -121,6 +112,13 @@ const pushWebpackConfig = (language, app) => {
             },
           ],
         },
+        // https://github.com/jamesandersen/string-replace-webpack-plugin
+        {
+          test: /\.([tj]sx|html|pug|s?css)?$/,
+          loader: StringReplacePlugin.replace({
+            replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language, app) }],
+          }),
+        },
       ],
     },
     // https://webpack.js.org/configuration/optimization/#optimizationminimizer
@@ -154,7 +152,7 @@ const pushWebpackConfig = (language, app) => {
       // https://webpack.js.org/plugins/html-webpack-plugin/
       new HtmlWebpackPlugin({
         filename: `${t9config.defaultLanguage !== language ? language + "/" : ""}index.html`,
-        template: `!!pug-loader!./src/apps/${app}/app/index.pug`,
+        template: `pug-loader!./src/apps/${app}/app/index.pug`,
       }),
     ],
     resolve: {
