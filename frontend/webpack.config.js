@@ -67,7 +67,7 @@ const pushWebpackConfig = (language, app) => {
       writeToDisk: true,
     },
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: isProduction ? "source-map" : "eval-source-map",
+    devtool: isProduction ? false : "eval-source-map",
     // https://webpack.js.org/configuration/entry-context/
     entry: path.join(__dirname, "./src/apps/", app, "/app/index.tsx"),
     // https://webpack.js.org/configuration/mode/
