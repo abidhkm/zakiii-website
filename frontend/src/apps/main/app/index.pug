@@ -1,0 +1,52 @@
+doctype html
+head(lang="en")
+  if(!isDev)
+    script.
+      (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-88799128-12', 'auto');
+      ga('send', 'pageview');
+
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+
+  title="{|page title|}"
+  link(rel="icon" href=require("src/.assets/ico/logo-compact.ico").default)
+  meta(name='description' content="{|page description|}")
+  meta(name='keywords' content="{|page keywords|}")
+  meta(property="og:image" content= require("src/.assets/jpg/logo-compact.jpg").default)
+  meta(name="theme-color" content= "#000")
+  style.
+    body { margin: 0; padding: 0; }
+    #splash-screen {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+    }
+    #splash-screen::after {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 200px;
+      height: 200px;
+
+      background-image: url("#{require('!!base64-inline-loader!../../../.assets/svg/logo-compact.svg')}");
+      background-position: center;
+      background-size: cover;
+    }
+    body > #splash-screen {
+      z-index: 1000;
+    }
+
+body
+  div#splash-screen
+  div#app-container
+    div#splash-screen

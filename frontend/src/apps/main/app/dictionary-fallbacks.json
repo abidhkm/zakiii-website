@@ -1,0 +1,12 @@
+{
+  "en": {
+    "page title": "Zakiii | Welcome",
+    "page description": "Welcome to the website ;)",
+    "page keywords": "Website,  blog, programming, react js, javascript, typescript, node js, vscode, heroku, docker, ci/cd"
+  },
+  "fr": {
+    "page title": "Zakiii | Bienvenue",
+    "page description": "Welcome to the website ;)",
+    "page keywords": "Site Web, blog, programming, react js, javascript, typescript, node js, vscode, heroku, docker, ci/cd"
+  }
+}

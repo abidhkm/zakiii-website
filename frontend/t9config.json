@@ -1,0 +1,15 @@
+{
+  "cliVersion": "1",
+  "defaultLanguage": "en",
+  "bundles": {
+    "distFolder": "./out",
+    "publicPath": "/"
+  },
+  "apps": [
+    "main"
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ]
+}
