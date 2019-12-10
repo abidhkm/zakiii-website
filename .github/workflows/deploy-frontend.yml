@@ -25,11 +25,11 @@ jobs:
     - name: yarn install, build, test and deploy
       run: |
         cd frontend
+        yarn
         yarn test
         yarn build
         yarn deploy
       env:
         CI: true
-        NODE_ENV: production
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
