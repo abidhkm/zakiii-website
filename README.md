@@ -17,7 +17,7 @@ The code for www.zakiii.com
     - projects
     - reviews
     - contact
-    - linkedIn, fb, YT, GH
+    - linkedIn, fb, YT, GH, twitter
 
     /CV: cv page for employers
 
@@ -26,7 +26,7 @@ The code for www.zakiii.com
     - why books, why paper books
     - books
     - contact
-    - fb, instagram, linkedIn
+    - fb, instagram, linkedIn, twitter
 
 /Articles
     - sidebar
@@ -37,7 +37,7 @@ The code for www.zakiii.com
         - description
         - content
         - contact
-        - fb, YT, GH, linkedIn, instagram
+        - fb, YT, GH, linkedIn, instagram, twitter
         - comments
 
 /Projects
@@ -49,7 +49,7 @@ The code for www.zakiii.com
         - description
         - what i did
         - contact
-        - fb, GH, YT, linkedIn
+        - fb, GH, YT, linkedIn, twitter
 
 /Books
     - sidebar
@@ -60,6 +60,6 @@ The code for www.zakiii.com
         - description
         - content
         - contact
-        - fb, instagram, YT, linkedIn
+        - fb, instagram, YT, linkedIn, twitter
         - comments
 ```
