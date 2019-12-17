@@ -17,7 +17,7 @@ The code for www.zakiii.com
     - projects
     - reviews
     - contact
-    - linkedIn, fb, YT
+    - linkedIn, fb, YT, GH
 
     /CV: cv page for employers
 
@@ -28,29 +28,38 @@ The code for www.zakiii.com
     - contact
     - fb, instagram, linkedIn
 
-/Articles : articles page
-    - cover pic
-    - title
-    - description
-    - content
-    - contact
-    - fb, YT, linkedIn, instagram
-    - comments
+/Articles
+    - sidebar
+    - content (description, or Article)
+    /:articleSlug : articles page
+        - cover pic
+        - title
+        - description
+        - content
+        - contact
+        - fb, YT, GH, linkedIn, instagram
+        - comments
 
-/Projects : projects page
-    - cover pic
-    - title
-    - description
-    - what i did
-    - contact
-    - fb, YT, linkedIn
+/Projects
+    - sidebar
+    - content (description, or Project)
+    /:projectSlug : projects page
+        - cover pic
+        - title
+        - description
+        - what i did
+        - contact
+        - fb, GH, YT, linkedIn
 
-/Books : books page
-    - cover pic
-    - title
-    - description
-    - content
-    - contact
-    - fb, instagram, YT, linkedIn
-    - comments
+/Books
+    - sidebar
+    - content (description, or Book)
+    /:bookSlug : books page
+        - cover pic
+        - title
+        - description
+        - content
+        - contact
+        - fb, instagram, YT, linkedIn
+        - comments
 ```
