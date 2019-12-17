@@ -2,3 +2,12 @@
 body > #splash-screen {
   display: none;
 }
+
+// @import "~normalize.css";
+// @import "~@blueprintjs/core";
+// FIXME: blueprintjs icons wouldn't load
+// @import "~@blueprintjs/icons";
+
+@import "./variables";
+@import "./animation";
+@import "./nprogress";
