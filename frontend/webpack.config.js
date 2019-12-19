@@ -78,16 +78,11 @@ const pushWebpackConfig = (language, app) => {
         { enforce: "pre", loader: "source-map-loader", test: /\.js$/ },
         // https://github.com/webpack-contrib/mini-css-extract-plugin/
         {
-          test: /\.(sa|sc|c)ss$/,
+          test: /\.css$/,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
               options: { hmr: isDevelopment },
-            },
-            {
-              loader: StringReplacePlugin.replace({
-                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
-              }),
             },
             // https://github.com/webpack-contrib/css-loader
             "css-loader",
@@ -96,8 +91,57 @@ const pushWebpackConfig = (language, app) => {
               loader: "postcss-loader",
               options: { plugins: () => [require("precss"), require("autoprefixer")] },
             },
-            // https://github.com/webpack-contrib/sass-loader
+          ],
+        },
+        // https://github.com/webpack-contrib/sass-loader
+        {
+          test: /\.(sa|sc)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: { hmr: isDevelopment },
+            },
+            // https://github.com/webpack-contrib/css-loader
+            "css-loader",
+            // https://github.com/postcss/postcss-loader#plugins
+            {
+              loader: "postcss-loader",
+              options: { plugins: () => [require("precss"), require("autoprefixer")] },
+            },
             "sass-loader",
+            {
+              loader: StringReplacePlugin.replace({
+                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
+              }),
+            },
+          ],
+        },
+        // https://github.com/webpack-contrib/less-loader
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: { hmr: isDevelopment },
+            },
+            // https://github.com/webpack-contrib/css-loader
+            "css-loader",
+            // https://github.com/postcss/postcss-loader#plugins
+            {
+              loader: "postcss-loader",
+              options: { plugins: () => [require("precss"), require("autoprefixer")] },
+            },
+            {
+              loader: 'less-loader', // compiles Less to CSS
+              options: {
+                javascriptEnabled: true,
+              }
+            },
+            {
+              loader: StringReplacePlugin.replace({
+                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
+              }),
+            },
           ],
         },
         // https://github.com/webpack-contrib/file-loader
@@ -114,7 +158,7 @@ const pushWebpackConfig = (language, app) => {
         },
         // https://github.com/jamesandersen/string-replace-webpack-plugin
         {
-          test: /\.([tj]sx|html|pug|s?css)?$/,
+          test: /\.([tj]sx?|html|pug)?$/,
           loader: StringReplacePlugin.replace({
             replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language, app) }],
           }),
@@ -173,6 +217,7 @@ const pushWebpackConfig = (language, app) => {
 
 // pushing configs for each language
 for (const language of t9config.languages) {
+  // if (language !== t9config.defaultLanguage) continue; // for dev environment
   for (const app of t9config.apps) {
     // push a config version
     pushWebpackConfig(language, app);
