@@ -2,3 +2,7 @@
 body > #splash-screen {
   display: none;
 }
+
+@import "./variables";
+@import "./animation";
+@import "./nprogress";

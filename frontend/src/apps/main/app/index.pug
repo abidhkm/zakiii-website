@@ -16,10 +16,10 @@ head(lang="en")
   meta(name='viewport' content='width=device-width, initial-scale=1')
 
   title="{|page title|}"
-  link(rel="icon" href=require("src/.assets/ico/logo-compact.ico").default)
+  link(rel="icon" href=require("src/assets/ico/logo-compact.ico").default)
   meta(name='description' content="{|page description|}")
   meta(name='keywords' content="{|page keywords|}")
-  meta(property="og:image" content= require("src/.assets/jpg/logo-compact.jpg").default)
+  meta(property="og:image" content= require("src/assets/jpg/og-image.jpg").default)
   meta(name="theme-color" content= "#000")
   style.
     body { margin: 0; padding: 0; }
@@ -38,7 +38,7 @@ head(lang="en")
       width: 200px;
       height: 200px;
 
-      background-image: url("#{require('!!base64-inline-loader!../../../.assets/svg/logo-compact.svg')}");
+      background-image: url("#{require('!!base64-inline-loader!../../../assets/svg/logo-compact.svg')}");
       background-position: center;
       background-size: cover;
     }

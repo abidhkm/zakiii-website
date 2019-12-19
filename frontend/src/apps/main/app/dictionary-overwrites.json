@@ -2,16 +2,16 @@
   "*": {
     "default language code": "en",
     "language english": "English",
-    "language french": "Français"
+    "language arabic": "العربية"
   },
   "en": {
     "language code": "en",
     "en": "English",
-    "fr": "French"
+    "ar": "Arabic"
   },
-  "fr": {
-    "language code": "fr",
-    "en": "Anglais",
-    "fr": "Français"
+  "ar": {
+    "language code": "ar",
+    "en": "الإنجليزية",
+    "ar": "العربية"
   }
 }
