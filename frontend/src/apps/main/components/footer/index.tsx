@@ -26,7 +26,7 @@ const footerSections = [
   },
   {
     items: [
-      { href: "tel:+213559790024", content: "+213 559 790 024" },
+      { href: "tel:+213559790024", content: "{|Phone number|}" },
       { href: "https://www.facebook.com/zakiii.man", content: "{|Facebook page|}" },
       { href: "https://www.youtube.com/channel/UCD1rlkXciGqAi52iJtVpu3A", content: "{|YouTube chanel|}" },
       { href: "https://www.instagram.com/zakiii.web", content: "{|Instagram account|}" },

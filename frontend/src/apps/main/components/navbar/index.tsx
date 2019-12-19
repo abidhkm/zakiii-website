@@ -6,7 +6,7 @@ import "./scroll";
 import "./style";
 
 const navButtons = [
-  { icon: "phone", title: "{|Call me|}", subTitle: "+213 559 790 024", href: "Tel:+213559790024" },
+  { icon: "phone", title: "{|Call me|}", subTitle: "{|Phone number|}", href: "Tel:+213559790024" },
   { icon: "mail", title: "{|Email me|}", subTitle: "contact@zakiii.com", href: "mailto:contact@zakiii.com" },
 ];
 
