@@ -108,12 +108,12 @@ const pushWebpackConfig = (language, app) => {
               loader: "postcss-loader",
               options: { plugins: () => [require("precss"), require("autoprefixer")] },
             },
-            "sass-loader",
             {
               loader: StringReplacePlugin.replace({
-                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
+                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language, app) }],
               }),
             },
+            "sass-loader",
           ],
         },
         // https://github.com/webpack-contrib/less-loader
@@ -132,21 +132,21 @@ const pushWebpackConfig = (language, app) => {
               options: { plugins: () => [require("precss"), require("autoprefixer")] },
             },
             {
+              loader: StringReplacePlugin.replace({
+                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language, app) }],
+              }),
+            },
+            {
               loader: 'less-loader', // compiles Less to CSS
               options: {
                 javascriptEnabled: true,
               }
             },
-            {
-              loader: StringReplacePlugin.replace({
-                replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language) }],
-              }),
-            },
           ],
         },
         // https://github.com/webpack-contrib/file-loader
         {
-          test: /\.(png|jpe?g|gif|svg|ico)$/i,
+          test: /\.(png|jpe?g|gif|svg|ico|ttf)$/i,
           use: [
             {
               loader: 'file-loader',

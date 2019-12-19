@@ -1,12 +1,12 @@
 {
   "en": {
     "page title": "zakiii | Welcome",
-    "page description": "Enjoy the game",
+    "page description": "Learn and share knowledge with the community",
     "page keywords": "zakiii, Website,  blog, programming, react js, javascript, typescript, node js, vscode, heroku, docker, ci/cd"
   },
   "ar": {
-    "page title": "زاكي | مرحبا",
-    "page description": "تعلم وشارك",
+    "page title": "زاكي | مرحبا بالجميع",
+    "page description": "تعلم وشارك العلم مع غيرك",
     "page keywords": "زاكي، موقع، برمجه، رياكت، جافاسكريبت، تايبسكريبت، نود، فيجوال ستوديو كود، هيروكو، دوكر"
   }
 }

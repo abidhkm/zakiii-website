@@ -1,10 +1,20 @@
 {
   "en": {
     "Call me": "Call me",
+    "Phone number": "+213 559 790 024",
     "Email me": "Email me",
     "Home": "Home",
     "Developer": "Developer",
     "Articles": "Articles",
     "Projects": "Projects"
+  },
+  "ar": {
+    "Call me": "إتصل بي",
+    "Phone number": "00213-559-790-024",
+    "Email me": "راسلني",
+    "Home": "الرئيسية",
+    "Developer": "مبرمج",
+    "Articles": "مقالة",
+    "Projects": "مشاريع"
   }
 }

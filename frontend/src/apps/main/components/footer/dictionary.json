@@ -6,6 +6,7 @@
     "FAQ": "FAQ",
     "Send feedback": "Send feedback",
     "Contact us": "Contact Us",
+    "Phone number": "+213 559 790 024",
     "Facebook page": "Facebook",
     "YouTube chanel": "YouTube",
     "Instagram account": "Instagram",
@@ -14,5 +15,22 @@
     "Github profile": "Github",
     "Twitter account": "Twitter",
     "Languages": "Languages"
+  },
+  "ar": {
+    "My goal title": "الهدف من هذا الموقع",
+    "My goal paragraph": "المشاركة بما لدي من خبرة مع الغير، ومساعده الجميع بكل ما أعرف.\\nzakiii.com هو للحميع، وبالجميع، أي أنك تستطيع أنت تغيير محتوى الموقع الى ما تراه منتاسبا، نعم يمكنك فعل ذلك على موقع <a href='https://github.com/zibanpirate/zakiii-website'>Github</a>",
+    "Useful links": "روابط مفيدة",
+    "FAQ": "الأسئلة المطروحة بكثرة",
+    "Send feedback": "شاركونا بآرائكم",
+    "Phone number": "00213-559-790-024",
+    "Contact us": "إتصل ينا",
+    "Facebook page": "Facebook",
+    "YouTube chanel": "YouTube",
+    "Instagram account": "Instagram",
+    "LinkedIn profile": "LinkedIn",
+    "Upwork profile": "Upwork",
+    "Github profile": "Github",
+    "Twitter account": "Twitter",
+    "Languages": "اللغات"
   }
 }

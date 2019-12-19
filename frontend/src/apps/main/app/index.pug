@@ -45,8 +45,16 @@ head(lang="en")
     body > #splash-screen {
       z-index: 1000;
     }
+- dir = ("{|language code|}" === "ar" ? "rtl" : "ltr");
+if dir=="rtl"
+  style.
+    * {
+      font-family: modern-arabic, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    }
 
-body
+body(dir=dir)
   div#splash-screen
   div#app-container
     div#splash-screen
