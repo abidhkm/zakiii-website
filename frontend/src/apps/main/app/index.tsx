@@ -9,6 +9,7 @@ import { frontendConfig } from "src/config";
 import { mainConfig } from "t9/apps/main/config";
 import { mainStore } from "t9/redux/main";
 import { Footer } from "../components/footer";
+import { Navbar } from "../components/navbar";
 import "./style";
 
 // only called once across entry.
@@ -21,6 +22,7 @@ window.globals.addLazyOperations([]);
 export const App: React.SFC<{}> = () => {
   return (
     <>
+      <Navbar />
       <LazySwitch
         transitionKey={1}
         transitionClass="fade"
