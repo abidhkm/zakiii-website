@@ -8,6 +8,7 @@ import { LazySwitch } from "src/components/lazy-switch";
 import { frontendConfig } from "src/config";
 import { mainConfig } from "t9/apps/main/config";
 import { mainStore } from "t9/redux/main";
+import { Footer } from "../components/footer";
 import "./style";
 
 // only called once across entry.
@@ -28,6 +29,7 @@ export const App: React.SFC<{}> = () => {
         childrenKey="app-level"
         lazyComponents={lazyComponents}
       />
+      <Footer />
     </>
   );
 };
