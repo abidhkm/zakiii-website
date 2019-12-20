@@ -1,0 +1,18 @@
+{
+  "en": {
+    "I do": "I do",
+    "Developer": "Programming",
+    "Reader": "Reading",
+    "Astronaut": "Space traveling",
+    "Modal title": "Just kidding 😄",
+    "Modal message": "i'm not an astronaut, ...but i build softwares, and that's good enough for me :)"
+  },
+  "ar": {
+    "I do": "أقوم بـ",
+    "Developer": "البرمجة",
+    "Reader": "قراءة الكتب",
+    "Astronaut": "السفر إلى الفضاء",
+    "Modal title": "تلك كانت مزحة 😄",
+    "Modal message": "أنا لست رائد فضاء، ولكنني أصنع برامج لا تقل أهمية بالنسبية إلي :)"
+  }
+}

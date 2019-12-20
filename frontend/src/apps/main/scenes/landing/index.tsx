@@ -4,8 +4,8 @@ import { GoTop } from "../../components/go-top";
 import { Articles } from "./articles";
 import { Books } from "./books";
 import { Header } from "./header";
+import { IAm } from "./iam";
 import { Projects } from "./projects";
-import { IAm } from "./sections";
 import "./style";
 
 class LandingScene extends React.Component<LandingSceneProps, {}> {
