@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
 import { initWindowGlobals } from "src/common/window.globals";
 import { LazySwitch } from "src/components/lazy-switch";
+import { Loading } from "src/components/loading";
 import { frontendConfig } from "src/config";
 import { mainConfig } from "t9/apps/main/config";
 import { mainStore } from "t9/redux/main";
@@ -15,7 +16,15 @@ import "./style";
 // only called once across entry.
 initWindowGlobals(mainConfig.app.frontendBaseURL, mainConfig.language.isDefaultLanguage, mainStore);
 
-const lazyComponents = window.globals.addLazyComponents([]);
+const lazyComponents = window.globals.addLazyComponents([
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "landing" */ "../scenes/landing"),
+    operationName: "loading-landing-scene",
+    status: "not-loaded",
+    url: { is: "", exact: true },
+  },
+]);
 
 window.globals.addLazyOperations([]);
 
