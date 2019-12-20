@@ -1,0 +1,21 @@
+@import "../../../../../common/style/variables";
+
+.landing {
+  .iam {
+    position: relative;
+    background-color: #fff;
+    .i-do {
+      font-size: xx-large;
+      padding-top: 1rem;
+    }
+    .a {
+      margin: 1rem;
+      display: inline-block;
+      @media screen and (max-width: $medium) {
+        button {
+          width: 50vw;
+        }
+      }
+    }
+  }
+}
