@@ -3,9 +3,14 @@
 .landing {
   .header {
     height: 100vh;
+    max-height: 100vw;
     position: relative;
     margin-top: -$navbarHeight;
     padding-top: $navbarHeight - $transition-vertical-distance;
+    max-height: 100vw;
+    @media screen and (max-width: $medium) {
+      max-height: unset;
+    }
     .bg {
       width: 100%;
       height: 100%;
@@ -25,7 +30,7 @@
       transform: translateY(-50%);
       right: 4rem;
       min-width: 50%;
-      text-align: end;
+      text-align: right;
       text-shadow: 0 0 1px $white-color;
       color: lighten($black-color, 20);
       .title {
