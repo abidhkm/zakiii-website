@@ -56,14 +56,14 @@ export const Footer: React.SFC<{}> = () => {
   return (
     <>
       <Row className="footer links" type="flex" justify="space-around">
-        <Col>
+        <Col lg={2 + 4} sm={12} span={20}>
           <h3>{"{|My goal title|}".toUpperCase()}</h3>
           <div className="divider" />
           {"{|My goal paragraph|}"
             .split("\n").map((paragraph, i) => <p key={`p-${i}`} dangerouslySetInnerHTML={{ __html: paragraph }} />)}
         </Col>
         {footerSections.map((footerSection, i) => (
-          <Col key={`fSection-${i}`}>
+          <Col lg={4} sm={12} span={20} key={`fSection-${i}`}>
             <h3>{footerSection.title.toUpperCase()}</h3>
             <div className="divider" />
             <ul>

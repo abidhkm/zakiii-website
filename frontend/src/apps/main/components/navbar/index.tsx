@@ -39,8 +39,8 @@ const NavBarNoRedux: React.SFC = () => {
             </React.Fragment>
           ))}
         </tr>
-        {["regular", "sticky"].map((cn) => (
-          <tr key={`nbMenu${cn}`} className={`navbarMenu ${cn}`}>
+        {["regular", "sticky"].map((className) => (
+          <tr key={`nbMenu${className}`} className={`navbarMenu ${className}`}>
             <td colSpan={8}>
               {menuButtons.map((menuButton, i) => (
                 <LinkV2 key={`menuBtn-${i}`} to={menuButton.to}>{menuButton.title.toUpperCase()}</LinkV2>

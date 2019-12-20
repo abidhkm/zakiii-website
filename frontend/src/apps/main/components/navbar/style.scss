@@ -47,12 +47,12 @@ $text-shadow: 0 1px 1px $white-color;
     }
   }
   .navbarMenu {
+    text-align: center;
+    position: relative;
     td {
       border-top: 1px solid #f2f2f6;
       height: (1-$ratio) * $navbarHeight;
     }
-    text-align: center;
-    position: relative;
     a {
       color: $black-color;
       display: inline-block;
@@ -60,6 +60,10 @@ $text-shadow: 0 1px 1px $white-color;
       font-weight: bolder;
       transition-property: background;
       transition-duration: 0.2s;
+      @media screen and (max-width: $small) {
+        padding: 0 0.3rem;
+        font-size: small;
+      }
     }
     a:hover {
       background-color: rgba($color: $black-color, $alpha: 0.2);
