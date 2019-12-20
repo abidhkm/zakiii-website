@@ -20,7 +20,7 @@ head(lang="en")
   meta(name='description' content="{|page description|}")
   meta(name='keywords' content="{|page keywords|}")
   meta(property="og:image" content= require("src/assets/jpg/og-image.jpg").default)
-  meta(name="theme-color" content= "#000")
+  meta(name="theme-color" content= "#5c9220")
   style.
     body { margin: 0; padding: 0; }
     #splash-screen {
@@ -45,14 +45,13 @@ head(lang="en")
     body > #splash-screen {
       z-index: 1000;
     }
-- dir = ("{|language code|}" === "ar" ? "rtl" : "ltr");
-if dir=="rtl"
-  style.
     * {
       font-family: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB",
         "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol";
     }
+
+- dir = ("{|language code|}" === "ar" ? "rtl" : "ltr");
 
 body(dir=dir)
   div#splash-screen
