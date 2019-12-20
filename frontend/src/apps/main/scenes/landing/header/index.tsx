@@ -3,7 +3,7 @@ import "./style";
 
 export const Header: React.SFC<{}> = () => {
   return (
-    <div className="header" dir="ltr">
+    <div className="header">
       <div className="bg" />
       <div className="fg">
         <div className="title">{"{|Title|}"}</div>
