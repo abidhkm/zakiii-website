@@ -146,7 +146,7 @@ const pushWebpackConfig = (language, app) => {
         },
         // https://github.com/webpack-contrib/file-loader
         {
-          test: /\.(png|jpe?g|gif|svg|ico|ttf)$/i,
+          test: /\.(png|jpe?g|gif|svg|ico|ttf|woff2?)$/i,
           use: [
             {
               loader: 'file-loader',
