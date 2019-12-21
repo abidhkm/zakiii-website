@@ -1,13 +1,13 @@
-name: Deploy Frontend
+name: Deploy Backend
 
 on:
   push:
     branches:
     - master
     paths:
-    - "frontend/**"
+    - "backend/**"
     - "fullstack/**"
-    - ".github/workflows/deploy-frontend.yml"
+    - ".github/workflows/deploy-backend.yml"
 
 jobs:
   Build-Test-Deploy:
@@ -26,12 +26,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: yarn install, build, test and deploy
       run: |
-        cd frontend
-        yarn
+        cd backend
+        yarn install --production
         yarn test
         yarn build
         yarn deploy
       env:
         CI: true
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
+        SURGE_DATA_DOMAIN: ${{ secrets.SURGE_DATA_DOMAIN }}

@@ -1,6 +1,7 @@
 # code
 **/node_modules
 frontend/out
+backend/out
 
 # misc
 **/.DS_Store
