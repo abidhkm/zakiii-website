@@ -63,6 +63,21 @@ const pushWebpackConfig = (language, app) => {
       host: "0.0.0.0",
       port,
       writeToDisk: true,
+      historyApiFallback: {
+        rewrites:
+          [
+            ...t9config.languages
+              .filter((language) => language !== t9config.defaultLanguage)
+              .map((language) => ({
+                from: `^\\/${language}`,
+                to: `/${language}/index.html`,
+              })),
+            {
+              from: `^\\/`,
+              to: `/index.html`,
+            }
+          ]
+      },
     },
     // https://webpack.js.org/configuration/devtool/#development
     devtool: isProduction ? false : "eval-source-map",
