@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": "out",
+    "site": "zakiii",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
