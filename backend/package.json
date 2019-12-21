@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "nodemon build.js",
+    "build": "NODE_ENV=production node build.js",
+    "test": "echo 0",
+    "deploy": "surge ./out --token $SURGE_TOKEN --domain $SURGE_DATA_DOMAIN"
+  },
+  "license": "none",
+  "private": true,
+  "engines": {
+    "node": "10",
+    "yarn": "1"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "surge": "^0.21.3"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}

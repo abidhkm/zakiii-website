@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "*.test.js",
+    "out/**"
+  ],
+  "ext": "js,json,md",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
