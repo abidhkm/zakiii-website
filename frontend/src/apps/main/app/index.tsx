@@ -9,6 +9,9 @@ import { Loading } from "src/components/loading";
 import { frontendConfig } from "src/config";
 import { mainConfig } from "t9/apps/main/config";
 import { mainStore } from "t9/redux/main";
+import { fetchArticle } from "t9/redux/main/actions/article";
+import { fetchArticles } from "t9/redux/main/actions/articles";
+import { resetSelectedKeys } from "t9/redux/main/actions/articles-scene";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import "./style";
@@ -22,11 +25,37 @@ const lazyComponents = window.globals.addLazyComponents([
     import: () => import(/* webpackChunkName: "landing" */ "../scenes/landing"),
     operationName: "loading-landing-scene",
     status: "not-loaded",
-    url: { is: "", exact: true },
+    url: { is: "/", exact: true },
+  },
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "articles" */ "../scenes/articles"),
+    operationName: "loading-articles-scene",
+    status: "not-loaded",
+    url: { is: "/Articles", exact: false },
   },
 ]);
 
-window.globals.addLazyOperations([]);
+window.globals.addLazyOperations([
+  {
+    actions: [fetchArticles],
+    operationName: "fetch-articles",
+    repeatable: false, status: "not-called",
+    url: { is: "/Articles", exact: false },
+  },
+  {
+    actions: [fetchArticle],
+    operationName: "fetch-article",
+    repeatable: true, status: "not-called",
+    url: { is: "/Articles/:articleSlug", exact: true },
+  },
+  {
+    actions: [resetSelectedKeys],
+    operationName: "reset-articles-scene-selectedKeys",
+    repeatable: true, status: "not-called",
+    url: { is: "/Articles", exact: true },
+  },
+]);
 
 export const App: React.SFC<{}> = () => {
   return (
