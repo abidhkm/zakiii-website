@@ -1,0 +1,37 @@
+name: Deploy Backend
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - "backend/**"
+    - "fullstack/**"
+    - ".github/workflows/deploy-backend.yml"
+
+jobs:
+  Build-Test-Deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: yarn install, build, test and deploy
+      run: |
+        cd backend
+        yarn install --production
+        yarn test
+        yarn build
+        yarn deploy
+      env:
+        CI: true
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        SURGE_DATA_DOMAIN: ${{ secrets.SURGE_DATA_DOMAIN }}
