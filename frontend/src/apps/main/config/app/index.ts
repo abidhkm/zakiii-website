@@ -14,7 +14,7 @@ export const app = {
   origin,
   protocol,
 
-  backendURL: fullstackConfig.app(isDev),
+  backendURL: fullstackConfig.app(isDev).backendURL,
   frontendBaseURL,
   frontendURL: origin + frontendBaseURL,
 };

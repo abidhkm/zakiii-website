@@ -27,7 +27,7 @@ jobs:
     - name: yarn install, build, test and deploy
       run: |
         cd frontend
-        yarn
+        yarn install --production
         yarn test
         yarn build
         yarn deploy

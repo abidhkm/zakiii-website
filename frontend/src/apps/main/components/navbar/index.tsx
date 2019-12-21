@@ -12,7 +12,6 @@ const navButtons = [
 
 const menuButtons = [
   { title: "{|Home|}", to: "/" },
-  { title: "{|Developer|}", to: "/Developer" },
   { title: "{|Articles|}", to: "/Articles" },
   { title: "{|Projects|}", to: "/Projects" },
 ];
