@@ -6,7 +6,7 @@ import { OpsCB } from "t9/types/fe/template-types";
 import { DispatchInterface as DI, MainStoreStateInterface as MSSI } from "t9/types/main/index";
 
 export const fetchArticle = (cb?: OpsCB) => ((dispatch: DI, getState: MSSI) => {
-  const articleSlug = getUrlNodeByLevel(2, window.globals.nextURL);
+  const articleSlug = getUrlNodeByLevel(2, window.globals.nextURL).substring(1);
   Axios.get(
     mainConfig.app.backendURL + `/{|language code|}/articles/${articleSlug}.json`,
   ).then((res) => {
