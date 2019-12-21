@@ -3,7 +3,7 @@
     "dev": "nodemon build.js",
     "build": "NODE_ENV=production node build.js",
     "test": "echo 0",
-    "deploy": "surge ./out --token $SURGE_TOKEN --domain $SURGE_DATA_DOMAIN"
+    "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "license": "none",
   "private": true,
@@ -12,10 +12,11 @@
     "yarn": "1"
   },
   "dependencies": {
-    "fs-extra": "^8.1.0",
-    "surge": "^0.21.3"
+    "firebase-tools": "^7.11.0",
+    "fs-extra": "^8.1.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
     "express": "^4.17.1",
     "nodemon": "^2.0.2"
   }

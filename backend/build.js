@@ -10,6 +10,6 @@ if (process.env.NODE_ENV === "development") {
   const express = require('express');
   const app = express();
   const port = 9090;
-  app.use(express.static('out'));
+  app.use(express.static('out', { setHeaders: (res) => res.setHeader("Access-Control-Allow-Origin", "*") }));
   app.listen(port, () => console.log(`Backend listening on port ${port}!`));
 }
