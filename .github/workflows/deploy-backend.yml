@@ -33,5 +33,4 @@ jobs:
         yarn deploy
       env:
         CI: true
-        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-        SURGE_DATA_DOMAIN: ${{ secrets.SURGE_DATA_DOMAIN }}
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
