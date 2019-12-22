@@ -1,0 +1,14 @@
+{
+  "en": {
+    "Recent articles": "Recent Dev Articles",
+    "Read more": "Read more",
+    "arrow right": "arrow-right",
+    "See all": "See all"
+  },
+  "ar": {
+    "Recent articles": "آخر المقالات حول البرمجة",
+    "Read more": "أكمل القراءة",
+    "arrow right": "arrow-left",
+    "See all": "جميع المقالات"
+  }
+}
