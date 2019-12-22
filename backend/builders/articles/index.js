@@ -11,8 +11,6 @@ for (const language of languages) {
   fse.ensureDirSync(`out/${language}/articles`)
   const articlesList = [];
   const articlesSlugs = fse.readJsonSync(`data/${language}/articles/list.json`);
-  const recentArticlesList = [];
-  const recentArticlesSlugs = fse.readJsonSync(`data/${language}/articles/recent.json`);
 
   for (const articleSlug of articlesSlugs) {
     const article = fse.readJsonSync(`data/${language}/articles/${articleSlug}/info.json`);
@@ -20,12 +18,6 @@ for (const language of languages) {
     articlesList.push({
       title: article.title,
       slug: articleSlug
-    })
-    recentArticlesList.push({
-      title: article.title,
-      slug: articleSlug,
-      description: article.description,
-      image: article.image,
     })
 
     const content = fse.readFileSync(`data/${language}/articles/${articleSlug}/content.md`);
@@ -42,6 +34,20 @@ for (const language of languages) {
 
   // save list.json
   fse.writeJsonSync(`out/${language}/articles/list.json`, articlesList);
+
+  const recentArticlesList = [];
+  const recentArticlesSlugs = fse.readJsonSync(`data/${language}/articles/recent.json`);
+
+  for (const articleSlug of recentArticlesSlugs) {
+    const article = fse.readJsonSync(`data/${language}/articles/${articleSlug}/info.json`);
+    recentArticlesList.push({
+      title: article.title,
+      slug: articleSlug,
+      description: article.description,
+      image: article.image,
+    })
+  }
+
   // save recent.json
   fse.writeJsonSync(`out/${language}/articles/recent.json`, recentArticlesList);
 }
