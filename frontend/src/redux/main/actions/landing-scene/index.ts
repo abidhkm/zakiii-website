@@ -14,3 +14,14 @@ export const fetchRecentArticles = (cb?: OpsCB) => ((dispatch: DI, getState: MSS
     if (cb) { cb(); }
   }).catch((err) => { if (cb) { cb({ message: err }); } });
 });
+
+export const fetchRecentBooks = (cb?: OpsCB) => ((dispatch: DI, getState: MSSI) => {
+  Axios.get(
+    mainConfig.app.backendURL + `/{|language code|}/books/recent.json`,
+  ).then((res) => {
+    if (res.data) {
+      dispatch({ type: actionType.UPDATE_LANDING_SCENE, payload: { recentBooks: res.data } });
+    }
+    if (cb) { cb(); }
+  }).catch((err) => { if (cb) { cb({ message: err }); } });
+});

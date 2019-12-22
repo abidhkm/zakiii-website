@@ -1,0 +1,14 @@
+{
+  "en": {
+    "Recent books": "Recent Books i Read",
+    "Read more": "Read more",
+    "arrow right": "arrow-right",
+    "See all": "See all"
+  },
+  "ar": {
+    "Recent books": "آخر الكتب التي قرأتها",
+    "Read more": "أكمل القراءة",
+    "arrow right": "arrow-left",
+    "See all": "جميع الكتب"
+  }
+}

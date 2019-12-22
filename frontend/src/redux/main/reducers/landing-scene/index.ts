@@ -4,6 +4,7 @@ import { actionType } from "t9/redux/main/constants";
 export const landingScene = (
   state: LandingSceneProps = {
     recentArticles: null,
+    recentBooks: null,
   },
   action: {
     type: string,

@@ -15,7 +15,7 @@ import { resetSelectedArticle } from "t9/redux/main/actions/articles-scene";
 import { fetchBook } from "t9/redux/main/actions/book";
 import { fetchBooks } from "t9/redux/main/actions/books";
 import { resetSelectedBook } from "t9/redux/main/actions/books-scene";
-import { fetchRecentArticles } from "t9/redux/main/actions/landing-scene";
+import { fetchRecentArticles, fetchRecentBooks } from "t9/redux/main/actions/landing-scene";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import "./style";
@@ -85,7 +85,7 @@ window.globals.addLazyOperations([
     url: { is: "/Books", exact: true },
   },
   {
-    actions: [fetchRecentArticles],
+    actions: [fetchRecentArticles, fetchRecentBooks],
     operationName: "fetch-data-for-landing-scene",
     repeatable: false, status: "not-called",
     url: { is: "/", exact: true },

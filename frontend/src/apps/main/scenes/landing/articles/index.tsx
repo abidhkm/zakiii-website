@@ -7,7 +7,7 @@ import "./style";
 export const Articles: React.SFC<{ articles: Article[] | null }> = ({ articles }) => {
   return (
     <>
-      <div className="articles-title">{"Recent Articles"}</div>
+      <div className="articles-title">{"{|Recent articles|}"}</div>
       <Row className="articles-component" type="flex" justify="space-around">
         {articles ?
           articles.map((article, i) => (
@@ -18,7 +18,7 @@ export const Articles: React.SFC<{ articles: Article[] | null }> = ({ articles }
                 actions={[
                   (
                     <LinkV2 to={`/Articles/${article.slug}`} key="see more">
-                      <Button type="link">READ MORE<Icon type="arrow-right" /></Button>
+                      <Button type="link">{"{|Read more|}".toUpperCase()}<Icon type="{|arrow right|}" /></Button>
                     </LinkV2>
                   ),
                 ]}
@@ -44,7 +44,7 @@ export const Articles: React.SFC<{ articles: Article[] | null }> = ({ articles }
       </Row>
       <div className="articles-footer">
         <LinkV2 to={`/Articles`}>
-          <Button type="link">SEE ALL<Icon type="arrow-right" /></Button>
+          <Button type="link">{"{|See all|}".toUpperCase()}<Icon type="{|arrow right|}" /></Button>
         </LinkV2>
       </div>
     </>
