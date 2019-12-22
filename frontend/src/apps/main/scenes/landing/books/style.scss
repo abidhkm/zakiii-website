@@ -1,4 +1,12 @@
 .landing {
-  .books {
+  .books-title {
+    margin-top: 3rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+  }
+  .books-component {
+    .book-card {
+      margin: 1rem;
+    }
   }
 }
