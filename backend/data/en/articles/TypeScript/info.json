@@ -1,0 +1,6 @@
+{
+  "title": "TypeScript",
+  "description": "TypeScript is an open-source programming language developed and maintained by Microsoft. It is a strict syntactical superset of JavaScript, and adds optional static typing to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript.",
+  "image": "https://images.unsplash.com/photo-1523439915587-3f8f551ed4c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=100",
+  "slug": "TypeScript"
+}

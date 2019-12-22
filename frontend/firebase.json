@@ -9,12 +9,12 @@
     ],
     "rewrites": [
       {
-        "source": "!/[a-z][a-z]{,/**}",
-        "destination": "/index.html"
-      },
-      {
         "source": "/ar{,/**}",
         "destination": "/ar/index.html"
+      },
+      {
+        "source": "!/[a-z][a-z]{,/**}",
+        "destination": "/index.html"
       }
     ]
   }
