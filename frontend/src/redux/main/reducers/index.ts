@@ -5,6 +5,7 @@ import { articlesScene } from "./articles-scene";
 import { book } from "./book";
 import { books } from "./books";
 import { booksScene } from "./books-scene";
+import { landingScene } from "./landing-scene";
 import { status } from "./status";
 
 export const mainReducer = combineReducers({
@@ -14,5 +15,6 @@ export const mainReducer = combineReducers({
   book,
   books,
   booksScene,
+  landingScene,
   status,
 });
