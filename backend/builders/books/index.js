@@ -11,14 +11,16 @@ for (const language of languages) {
   fse.ensureDirSync(`out/${language}/books`)
   const booksList = [];
   const booksSlugs = fse.readJsonSync(`data/${language}/books/list.json`);
+
   for (const bookSlug of booksSlugs) {
     const book = fse.readJsonSync(`data/${language}/books/${bookSlug}/info.json`);
+
     booksList.push({
       title: book.title,
       slug: bookSlug
     })
-    const content = fse.readFileSync(`data/${language}/books/${bookSlug}/content.md`);
 
+    const content = fse.readFileSync(`data/${language}/books/${bookSlug}/content.md`);
     // save [bookSlug].json
     fse.writeJsonSync(
       `out/${language}/books/${bookSlug}.json`,
@@ -32,4 +34,20 @@ for (const language of languages) {
 
   // save list.json
   fse.writeJsonSync(`out/${language}/books/list.json`, booksList);
+
+  const recentBooksList = [];
+  const recentBooksSlugs = fse.readJsonSync(`data/${language}/books/recent.json`);
+
+  for (const bookSlug of recentBooksSlugs) {
+    const book = fse.readJsonSync(`data/${language}/books/${bookSlug}/info.json`);
+    recentBooksList.push({
+      title: book.title,
+      slug: bookSlug,
+      description: book.description,
+      image: book.image,
+    })
+  }
+
+  // save recent.json
+  fse.writeJsonSync(`out/${language}/books/recent.json`, recentBooksList);
 }
