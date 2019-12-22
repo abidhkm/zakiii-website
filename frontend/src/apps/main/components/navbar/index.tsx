@@ -13,7 +13,7 @@ const navButtons = [
 const menuButtons = [
   { title: "{|Home|}", to: "/" },
   { title: "{|Articles|}", to: "/Articles" },
-  { title: "{|Projects|}", to: "/Projects" },
+  { title: "{|Books|}", to: "/Books" },
 ];
 
 const NavBarNoRedux: React.SFC = () => {
