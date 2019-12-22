@@ -1,1 +1,2 @@
 require("./articles");
+require("./books");
