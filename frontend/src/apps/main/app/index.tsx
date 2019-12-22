@@ -11,7 +11,10 @@ import { mainConfig } from "t9/apps/main/config";
 import { mainStore } from "t9/redux/main";
 import { fetchArticle } from "t9/redux/main/actions/article";
 import { fetchArticles } from "t9/redux/main/actions/articles";
-import { resetSelectedKeys } from "t9/redux/main/actions/articles-scene";
+import { resetSelectedArticle } from "t9/redux/main/actions/articles-scene";
+import { fetchBook } from "t9/redux/main/actions/book";
+import { fetchBooks } from "t9/redux/main/actions/books";
+import { resetSelectedBook } from "t9/redux/main/actions/books-scene";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import "./style";
@@ -34,6 +37,13 @@ const lazyComponents = window.globals.addLazyComponents([
     status: "not-loaded",
     url: { is: "/Articles", exact: false },
   },
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "books" */ "../scenes/books"),
+    operationName: "loading-books-scene",
+    status: "not-loaded",
+    url: { is: "/Books", exact: false },
+  },
 ]);
 
 window.globals.addLazyOperations([
@@ -50,10 +60,28 @@ window.globals.addLazyOperations([
     url: { is: "/Articles/:articleSlug", exact: true },
   },
   {
-    actions: [resetSelectedKeys],
+    actions: [resetSelectedArticle],
     operationName: "reset-articles-scene-selectedKeys",
     repeatable: true, status: "not-called",
     url: { is: "/Articles", exact: true },
+  },
+  {
+    actions: [fetchBooks],
+    operationName: "fetch-books",
+    repeatable: false, status: "not-called",
+    url: { is: "/Books", exact: false },
+  },
+  {
+    actions: [fetchBook],
+    operationName: "fetch-book",
+    repeatable: true, status: "not-called",
+    url: { is: "/Books/:bookSlug", exact: true },
+  },
+  {
+    actions: [resetSelectedBook],
+    operationName: "reset-books-scene-selectedKeys",
+    repeatable: true, status: "not-called",
+    url: { is: "/Books", exact: true },
   },
 ]);
 

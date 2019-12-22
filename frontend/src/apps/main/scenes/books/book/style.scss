@@ -1,0 +1,21 @@
+@import "../../../../../common/style/variables";
+
+.books {
+  .book {
+    background: #fff;
+    .book-skeleton {
+      margin: 1rem;
+    }
+    .image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .title {
+      font-size: xx-large;
+    }
+    .description {
+      font-size: small;
+    }
+  }
+}
