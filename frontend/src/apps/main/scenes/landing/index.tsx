@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { GoTop } from "../../components/go-top";
+import { Article } from "../../types";
 import { Articles } from "./articles";
 import { Books } from "./books";
 import { Header } from "./header";
@@ -15,7 +16,7 @@ class LandingScene extends React.Component<LandingSceneProps, {}> {
       <div className="landing">
         <Header />
         <IAm />
-        <Articles />
+        <Articles articles={this.props.recentArticles} />
         <Books />
         <Projects />
         <GoTop />
@@ -25,6 +26,7 @@ class LandingScene extends React.Component<LandingSceneProps, {}> {
 }
 
 export interface LandingSceneProps {
+  recentArticles: Article[] | null;
 }
 
 export default connect

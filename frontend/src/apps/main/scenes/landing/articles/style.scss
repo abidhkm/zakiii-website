@@ -1,4 +1,12 @@
 .landing {
-  .articles {
+  .articles-title {
+    margin-top: 3rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+  }
+  .articles-component {
+    .article-card {
+      margin: 1rem;
+    }
   }
 }
