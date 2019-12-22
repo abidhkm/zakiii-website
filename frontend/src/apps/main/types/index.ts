@@ -16,3 +16,12 @@ export interface Article {
   image?: string;
   content?: string;
 }
+
+export interface Book {
+  title: string;
+  slug: string;
+  description?: string;
+  authors?: string;
+  image?: string;
+  content?: string;
+}
