@@ -161,6 +161,7 @@ const globals = {
       runPromisesByURL(nextURL, (pass: boolean) => {
         if (pass) {
           window.ga("set", "page", nextURL); window.ga("send", "pageview");
+          window.fbq("track", "PageView");
 
           // TODO: respect the #
           // scroll to top when push action is Forward and the url pathname changed
@@ -204,5 +205,6 @@ declare global {
     // tslint:disable-next-line: max-line-length
     // https://developers.google.com/analytics/devguides/collection/analyticsjs/command-queue-reference#adding-commands-to-the-queue
     ga: (command: string, ...fields: any[]) => void;
+    fbq: (command: string, ...fields: any[]) => void;
   }
 }
