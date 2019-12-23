@@ -16,8 +16,8 @@ for (const language of languages) {
   for (const projectSlug of projectsSlugs) {
     const project = fse.readJsonSync(`data/${language}/projects/${projectSlug}/info.json`);
     projectsList.push({
-      title: project.title,
-      slug: projectSlug
+      ...project,
+      slug: projectSlug,
     })
   }
   fse.writeJsonSync(`out/${language}/projects/list.json`, projectsList);
