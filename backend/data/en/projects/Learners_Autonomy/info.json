@@ -1,0 +1,10 @@
+{
+  "name": "Learner's autonomy",
+  "description": "E-learning website, for those who want to learn English.",
+  "image": "https://images.unsplash.com/photo-1550376026-33cbee34f79e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=100",
+  "link": "https://learnersautonomy.herokuapp.com",
+  "logo": "https://learnersautonomy.herokuapp.com/w/svg/logo.svg",
+  "owner": {
+    "name": "Sara"
+  }
+}

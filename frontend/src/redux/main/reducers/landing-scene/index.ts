@@ -5,6 +5,7 @@ export const landingScene = (
   state: LandingSceneProps = {
     recentArticles: null,
     recentBooks: null,
+    recentProjects: null,
   },
   action: {
     type: string,

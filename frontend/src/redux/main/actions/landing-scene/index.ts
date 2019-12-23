@@ -25,3 +25,14 @@ export const fetchRecentBooks = (cb?: OpsCB) => ((dispatch: DI, getState: MSSI) 
     if (cb) { cb(); }
   }).catch((err) => { if (cb) { cb({ message: err }); } });
 });
+
+export const fetchRecentProjects = (cb?: OpsCB) => ((dispatch: DI, getState: MSSI) => {
+  Axios.get(
+    mainConfig.app.backendURL + `/{|language code|}/projects/recent.json`,
+  ).then((res) => {
+    if (res.data) {
+      dispatch({ type: actionType.UPDATE_LANDING_SCENE, payload: { recentProjects: res.data } });
+    }
+    if (cb) { cb(); }
+  }).catch((err) => { if (cb) { cb({ message: err }); } });
+});

@@ -62,7 +62,7 @@ const pushWebpackConfig = (language, app) => {
       disableHostCheck: true,
       host: "0.0.0.0",
       port,
-      writeToDisk: true,
+      writeToDisk: false,
       historyApiFallback: {
         rewrites:
           [

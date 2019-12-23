@@ -1,0 +1,10 @@
+{
+  "name": "Vision Store Biskra",
+  "description": "متجر إلكتروني لبيع النظارات الشمسية والطبية، وكل ماهو متعلق بصحة العين.",
+  "image": "https://images.unsplash.com/photo-1546180245-c59500ad14d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=100",
+  "link": "https://www.visionstorebiskra.com",
+  "logo": "https://www.visionstorebiskra.com/w/svg/logo.svg",
+  "owner": {
+    "name": "Mohammed"
+  }
+}

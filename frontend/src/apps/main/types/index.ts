@@ -25,3 +25,15 @@ export interface Book {
   image?: string;
   content?: string;
 }
+
+export interface Project {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+  slug: string;
+  logo: string;
+  owner: {
+    name: string;
+  };
+}
