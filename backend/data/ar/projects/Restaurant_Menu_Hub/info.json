@@ -1,0 +1,10 @@
+{
+  "name": "Restaurant Menu Hub",
+  "description": "موقع إلكتروني للبحث عن أقرب المطاعم العاملية في مدينة نيويورك",
+  "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=100",
+  "link": "http://restaurant-menu-hub.herokuapp.com",
+  "logo": "https://restaurant-menu-hub.herokuapp.com/w/svg/logo.svg",
+  "owner": {
+    "name": "Sanuar"
+  }
+}
