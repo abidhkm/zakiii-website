@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { GoTop } from "../../components/go-top";
-import { Article, Book } from "../../types";
+import { Article, Book, Project } from "../../types";
 import { Articles } from "./articles";
 import { Books } from "./books";
 import { Header } from "./header";
@@ -16,9 +16,9 @@ class LandingScene extends React.Component<LandingSceneProps, {}> {
       <div className="landing">
         <Header />
         <IDo />
+        <Projects projects={this.props.recentProjects} />
         <Articles articles={this.props.recentArticles} />
         <Books books={this.props.recentBooks} />
-        <Projects />
         <GoTop />
       </div>
     );
@@ -28,6 +28,7 @@ class LandingScene extends React.Component<LandingSceneProps, {}> {
 export interface LandingSceneProps {
   recentArticles: Article[] | null;
   recentBooks: Book[] | null;
+  recentProjects: Project[] | null;
 }
 
 export default connect
