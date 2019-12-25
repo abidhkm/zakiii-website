@@ -1,14 +1,14 @@
 .reader {
   text-align: center;
+  .title {
+    margin-bottom: 1rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+  }
   .intro {
     position: relative;
     background-color: #fff;
     padding-top: 2rem;
-    .title {
-      margin-bottom: 1rem;
-      font-size: xx-large;
-      padding-top: 1rem;
-    }
     max-width: 600px;
     margin: 0 auto;
     p {
