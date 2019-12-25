@@ -61,6 +61,13 @@ const lazyComponents = window.globals.addLazyComponents([
     status: "not-loaded",
     url: { is: "/Reader", exact: false },
   },
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "developer" */ "../scenes/developer"),
+    operationName: "loading-developer-scene",
+    status: "not-loaded",
+    url: { is: "/Developer", exact: false },
+  },
 ]);
 
 window.globals.addLazyOperations([

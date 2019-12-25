@@ -1,0 +1,27 @@
+.developer {
+  text-align: center;
+  .title {
+    margin-bottom: 1rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+  }
+  .intro {
+    position: relative;
+    background-color: #fff;
+    padding-top: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    p {
+      text-align: justify;
+      padding: 0 1rem;
+    }
+  }
+  .project-card,
+  .article-card {
+    text-align: start;
+    .ant-card-cover > img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
