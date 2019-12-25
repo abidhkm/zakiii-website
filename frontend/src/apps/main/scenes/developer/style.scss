@@ -1,4 +1,4 @@
-.reader {
+.developer {
   text-align: center;
   .title {
     margin-bottom: 1rem;
@@ -16,7 +16,8 @@
       padding: 0 1rem;
     }
   }
-  .book-card {
+  .project-card,
+  .article-card {
     text-align: start;
     .ant-card-cover > img {
       height: 200px;

@@ -1,0 +1,20 @@
+{
+  "en": {
+    "Intro title": "Front-End TypeScript/JavaScript developer",
+    "Intro paragraph": "I'm a Front-End TypeScript/JavaScript developer, with Back-End experience (NodeJS, Strapi CMS, Loopback 4), and I also do DevOps (Docker, CI/CD, Gitlab).\\n- I build responsive, SEO friendly universal websites with React + Strapi / Loopback 4, that can be easily converted into a Progressive Web App (PWA).\\n- I develop cross-platform desktop apps (Electron).\\nI like working with a team and prefer Git, however i can get used to any working environment so it shouldn't be a problem.",
+    "Recent projects": "Recent Projects i Realized",
+    "Recent articles": "Recent Dev Articles",
+    "See all projects": "See all projects",
+    "See all articles": "See all articles",
+    "arrow right": "arrow-right"
+  },
+  "ar": {
+    "Intro title": "مبرمج جافاسكريبت",
+    "Intro paragraph": "أقوم بتحويل الأفكار إلى مواقع، تطبيقات هواتف أو برامج سطح المكتب",
+    "Recent projects": "آخر الأعمال التي قمت  بها",
+    "Recent articles": "آخر المقالات حول البرمجة",
+    "See all projects": "جميع الإنجازات",
+    "See all articles": "جميع المقالات",
+    "arrow right": "arrow-left"
+  }
+}
