@@ -5,7 +5,7 @@ import { Project } from "t9/types/main/index";
 import { Projects } from "./projects";
 import "./style";
 
-class ProjectsScene extends React.Component<ProjectsSceneProps, {}> {
+class ProjectsScene extends React.Component<ProjectsScenePropsReduxed, {}> {
 
   public render() {
 
@@ -17,6 +17,9 @@ class ProjectsScene extends React.Component<ProjectsSceneProps, {}> {
       </div>
     );
   }
+}
+
+interface ProjectsScenePropsReduxed extends ProjectsSceneProps {
 }
 
 export interface ProjectsSceneProps {

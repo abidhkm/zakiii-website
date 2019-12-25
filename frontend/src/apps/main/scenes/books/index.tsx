@@ -8,7 +8,7 @@ import { BookSene } from "./book";
 import { Landing } from "./landing";
 import "./style";
 
-class BooksScene extends React.Component<BooksSceneProps, {}> {
+class BooksScene extends React.Component<BooksScenePropsReduxed, {}> {
 
   public render() {
 
@@ -49,9 +49,12 @@ class BooksScene extends React.Component<BooksSceneProps, {}> {
   }
 }
 
-export interface BooksSceneProps {
+interface BooksScenePropsReduxed extends BooksSceneProps {
   books?: Book[] | null;
   book?: Book | null;
+}
+
+export interface BooksSceneProps {
   selectedKeys: string | null;
 }
 
