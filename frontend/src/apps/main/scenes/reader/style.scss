@@ -1,0 +1,23 @@
+.reader {
+  text-align: center;
+  .title {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: xx-large;
+    padding-top: 1rem;
+  }
+  .intro {
+    max-width: 600px;
+    margin: 1rem auto;
+    p {
+      text-align: justify;
+    }
+  }
+  .book-card {
+    text-align: start;
+    .ant-card-cover > img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}

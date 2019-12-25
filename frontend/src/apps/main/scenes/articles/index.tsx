@@ -8,7 +8,7 @@ import { ArticleSene } from "./article";
 import { Landing } from "./landing";
 import "./style";
 
-class ArticlesScene extends React.Component<ArticlesSceneProps, {}> {
+class ArticlesScene extends React.Component<ArticlesScenePropsReduxed, {}> {
 
   public render() {
 
@@ -49,9 +49,12 @@ class ArticlesScene extends React.Component<ArticlesSceneProps, {}> {
   }
 }
 
-export interface ArticlesSceneProps {
+interface ArticlesScenePropsReduxed extends ArticlesSceneProps {
   articles?: Article[] | null;
   article?: Article | null;
+}
+
+export interface ArticlesSceneProps {
   selectedKeys: string | null;
 }
 

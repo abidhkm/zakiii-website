@@ -7,6 +7,7 @@ import { books } from "./books";
 import { booksScene } from "./books-scene";
 import { landingScene } from "./landing-scene";
 import { projectsScene } from "./projects-scene";
+import { readerScene } from "./reader-scene";
 import { status } from "./status";
 
 export const mainReducer = combineReducers({
@@ -18,5 +19,6 @@ export const mainReducer = combineReducers({
   booksScene,
   landingScene,
   projectsScene,
+  readerScene,
   status,
 });

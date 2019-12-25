@@ -9,7 +9,7 @@ import { IDo } from "./ido";
 import { Projects } from "./projects";
 import "./style";
 
-class LandingScene extends React.Component<LandingSceneProps, {}> {
+class LandingScene extends React.Component<LandingScenePropsReduxed, {}> {
 
   public render() {
     return (
@@ -23,6 +23,9 @@ class LandingScene extends React.Component<LandingSceneProps, {}> {
       </div>
     );
   }
+}
+
+interface LandingScenePropsReduxed extends LandingSceneProps {
 }
 
 export interface LandingSceneProps {

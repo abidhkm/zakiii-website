@@ -31,13 +31,12 @@ for (const language of languages) {
       }
     );
   }
-
   // save list.json
   fse.writeJsonSync(`out/${language}/books/list.json`, booksList);
 
+  // recent.json
   const recentBooksList = [];
   const recentBooksSlugs = fse.readJsonSync(`data/${language}/books/recent.json`);
-
   for (const bookSlug of recentBooksSlugs) {
     const book = fse.readJsonSync(`data/${language}/books/${bookSlug}/info.json`);
     recentBooksList.push({
@@ -47,7 +46,19 @@ for (const language of languages) {
       image: book.image,
     })
   }
-
-  // save recent.json
   fse.writeJsonSync(`out/${language}/books/recent.json`, recentBooksList);
+
+  // favorite.json
+  const favoriteBooksList = [];
+  const favoriteBooksSlugs = fse.readJsonSync(`data/${language}/books/favorite.json`);
+  for (const bookSlug of favoriteBooksSlugs) {
+    const book = fse.readJsonSync(`data/${language}/books/${bookSlug}/info.json`);
+    favoriteBooksList.push({
+      title: book.title,
+      slug: bookSlug,
+      description: book.description,
+      image: book.image,
+    })
+  }
+  fse.writeJsonSync(`out/${language}/books/favorite.json`, favoriteBooksList);
 }
