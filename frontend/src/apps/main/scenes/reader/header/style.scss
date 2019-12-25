@@ -1,0 +1,69 @@
+@import "../../../../../common/style/variables";
+
+.reader {
+  .header {
+    height: 100vh;
+    max-height: 100vw;
+    position: relative;
+    margin-top: -$navbarHeight;
+    padding-top: $navbarHeight - $transition-vertical-distance;
+    max-height: 100vw;
+    @media screen and (max-width: $medium) {
+      max-height: unset;
+    }
+    .bg {
+      width: 100%;
+      height: 100%;
+      background-color: #e2e2e2;
+      background-image: url(../../../../../assets/jpg/reader-header.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left;
+      @media screen and (max-width: $medium) {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    .fg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 4rem;
+      min-width: 50%;
+      text-align: right;
+      text-shadow: 0 0 1px $white-color;
+      color: lighten($black-color, 20);
+      .title {
+        font-size: 54pt;
+        font-weight: bolder;
+      }
+      .subtitle {
+        font-size: xx-large;
+      }
+      .resume {
+        font-size: medium;
+      }
+      @media screen and (max-width: $medium) {
+        width: 100vw;
+        text-align: center;
+        right: 0;
+        transform: translateY(-100%);
+        top: 100%;
+        background: #00000082;
+        color: white;
+        box-shadow: 0 0 30px 30px #00000082;
+        padding: 1rem 0.3rem;
+        .title {
+          font-size: 36pt;
+          font-weight: bolder;
+        }
+        .subtitle {
+          font-size: x-large;
+        }
+        .resume {
+          font-size: medium;
+        }
+      }
+    }
+  }
+}

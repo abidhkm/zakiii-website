@@ -17,6 +17,7 @@ import { fetchBooks } from "t9/redux/main/actions/books";
 import { resetSelectedBook } from "t9/redux/main/actions/books-scene";
 import { fetchRecentArticles, fetchRecentBooks, fetchRecentProjects } from "t9/redux/main/actions/landing-scene";
 import { fetchProjects } from "t9/redux/main/actions/projects-scene";
+import { fetchFavoriteBooks } from "t9/redux/main/actions/reader-scene";
 import { Footer } from "../components/footer";
 import { Navbar } from "../components/navbar";
 import "./style";
@@ -52,6 +53,13 @@ const lazyComponents = window.globals.addLazyComponents([
     operationName: "loading-projects-scene",
     status: "not-loaded",
     url: { is: "/Projects", exact: false },
+  },
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "reader" */ "../scenes/reader"),
+    operationName: "loading-reader-scene",
+    status: "not-loaded",
+    url: { is: "/Reader", exact: false },
   },
 ]);
 
@@ -93,10 +101,22 @@ window.globals.addLazyOperations([
     url: { is: "/Books", exact: true },
   },
   {
-    actions: [fetchRecentArticles, fetchRecentBooks, fetchRecentProjects],
+    actions: [fetchRecentArticles, fetchRecentProjects],
     operationName: "fetch-data-for-landing-scene",
     repeatable: false, status: "not-called",
-    url: { is: "/", exact: true },
+    url: { is: "/(Developer)?", exact: true },
+  },
+  {
+    actions: [fetchRecentBooks],
+    operationName: "fetch-recent-books",
+    repeatable: false, status: "not-called",
+    url: { is: "/(Reader)?", exact: true },
+  },
+  {
+    actions: [fetchFavoriteBooks],
+    operationName: "fetch-data-for-reader-scene",
+    repeatable: false, status: "not-called",
+    url: { is: "/Reader", exact: false },
   },
   {
     actions: [fetchProjects],
