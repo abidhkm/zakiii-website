@@ -4,15 +4,15 @@
     "Phone number": "+213 559 790 024",
     "Email me": "Email me",
     "Home": "Home",
-    "Articles": "Articles",
-    "Books": "Books"
+    "Developer": "Developer",
+    "Reader": "Reader"
   },
   "ar": {
     "Call me": "إتصل بي",
     "Phone number": "00213-559-790-024",
     "Email me": "راسلني",
     "Home": "الرئيسية",
-    "Articles": "مقالات",
-    "Books": "كتب"
+    "Developer": "مطور",
+    "Reader": "مطالع"
   }
 }
