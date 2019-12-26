@@ -212,6 +212,9 @@ const pushWebpackConfig = (language, app) => {
       new HtmlWebpackPlugin({
         filename: `${t9config.defaultLanguage !== language ? language + "/" : ""}index.html`,
         template: `pug-loader!./src/apps/${app}/app/index.pug`,
+        templateParameters: {
+          isDev: isDevelopment,
+        }
       }),
     ],
     resolve: {
