@@ -160,9 +160,10 @@ const globals = {
       window.globals.nextURL = nextURL;
       runPromisesByURL(nextURL, (pass: boolean) => {
         if (pass) {
-          window.ga("set", "page", nextURL); window.ga("send", "pageview");
-          window.fbq("track", "PageView");
-
+          if (!frontendConfig.environment.isDev) {
+            window.ga("set", "page", nextURL); window.ga("send", "pageview");
+            window.fbq("track", "PageView");
+          }
           // TODO: respect the #
           // scroll to top when push action is Forward and the url pathname changed
           const searchIndex = nextURL.indexOf("?");
