@@ -154,6 +154,10 @@ const pushWebpackConfig = (language, app) => {
             {
               loader: 'less-loader', // compiles Less to CSS
               options: {
+                modifyVars: {
+                  'primary-color': '#1DA57A',
+                  'link-color': '#1890ff',
+                },
                 javascriptEnabled: true,
               }
             },
