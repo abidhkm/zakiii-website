@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import * as React from "react";
 import { LinkV2 } from "src/components/link-v2";
 import { mainConfig } from "t9/apps/main/config";
@@ -19,21 +19,32 @@ const changeLanguage = (languageCode: string) => {
 const footerSections = [
   {
     items: [
-      { to: "/FAQ", content: "{|FAQ|}" },
-      { to: "/Contact_us", content: "{|Send feedback|}" },
+      { to: `/FAQ`, content: `{|FAQ|}` },
+      { to: `/Contact_us`, content: `{|Send feedback|}` },
     ],
-    title: "{|Useful links|}",
+    title: `{|Useful links|}`,
   },
   {
     items: [
-      { href: "tel:+213559790024", content: "{|Phone number|}" },
-      { href: "https://www.facebook.com/zakiii.man", content: "{|Facebook page|}" },
-      { href: "https://www.youtube.com/channel/UCD1rlkXciGqAi52iJtVpu3A", content: "{|YouTube chanel|}" },
-      { href: "https://www.instagram.com/zakiii.web", content: "{|Instagram account|}" },
-      { href: "https://www.linkedin.com/in/mansouri-zakaria", content: "{|LinkedIn profile|}" },
-      { href: "https://www.upwork.com/o/profiles/users/_~0164cec8ad3b89fe21", content: "{|Upwork profile|}" },
-      { href: "https://github.com/zibanpirate", content: "{|Github profile|}" },
-      { href: "https://twitter.com/zibanpirate", content: "{|Twitter account|}" },
+      { content: `{|Phone number|}`, href: `tel:+213559790024`, icon: `phone` },
+      {
+        href: `https://www.youtube.com/channel/UCD1rlkXciGqAi52iJtVpu3A`,
+        html: `<div class="g-ytsubscribe" data-channelid="UCD1rlkXciGqAi52iJtVpu3A" data-layout="default" data-theme="dark" data-count="default"></div>`,
+      },
+      {
+        href: `https://www.facebook.com/zakiii.man`,
+        html: `<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fzakiii.man&width=200&layout=button_count&action=like&size=large&share=true&height=35&appId" width="100%" height="35" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>`,
+      },
+      {
+        href: `https://github.com/zibanpirate`,
+        html: `<div dir="ltr"><a class="github-button" href="https://github.com/zibanpirate/zakiii-website" data-size="large" data-show-count="true" aria-label="Star zibanpirate/zakiii-website on GitHub">{|Github profile|}</a></div>`,
+      },
+      {
+        href: `https://twitter.com/zibanpirate`,
+        html: `<a href="https://twitter.com/zibanpirate?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-lang="{|language code|}" data-size="large" data-show-screen-name="false" data-show-count="false"></a>`,
+      },
+      { content: `{|Instagram account|}`, href: `https://www.instagram.com/zakiii.web`, icon: `instagram` },
+      { content: `{|LinkedIn profile|}`, href: `https://www.linkedin.com/in/mansouri-zakaria`, icon: `linkedin` },
     ],
     title: "{|Contact us|}",
   },
@@ -71,7 +82,15 @@ export const Footer: React.SFC<{}> = () => {
                 <li key={`fLink-${i}-${j}`}>
                   {item.to
                     ? <LinkV2 to={item.to}>{item.content}</LinkV2>
-                    : <a href={item.href} onClick={item.onClick}>{item.content}</a>
+                    : item.html
+                      // tslint:disable-next-line: max-line-length
+                      ? <a href={item.href} target="blank" onClick={item.onClick} dangerouslySetInnerHTML={{ __html: item.html }} />
+                      : (
+                        <a href={item.href} target="blank" onClick={item.onClick}>
+                          {item.icon ? <Button type="link" icon={item.icon} /> : null}
+                          {item.content}
+                        </a>
+                      )
                   }
                 </li>
               ))}
