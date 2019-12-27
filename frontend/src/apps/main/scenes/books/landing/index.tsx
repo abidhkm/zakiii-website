@@ -6,7 +6,7 @@ import "./style";
 export const Landing: React.FC<{ books?: Book[] | null }> = ({ books }) => {
   return (
     <Layout className="landing">
-      <Empty description={"👈 Browse books from the left sidebar 👈"} />
+      <Empty description={"{|content|}"} />
     </Layout>
   );
 };
