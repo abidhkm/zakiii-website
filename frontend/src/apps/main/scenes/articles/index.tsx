@@ -12,21 +12,29 @@ class ArticlesScene extends React.Component<ArticlesScenePropsReduxed, {}> {
 
   public render() {
 
+    const zeroWidthTriggerStyle = {
+      boxShadow: "0 0 12px 6px #fff9",
+      ...("{|language code|}" as any === "ar"
+        ? { right: "unset", left: -36, borderRadius: "4px 0 0 4px", boxShadow: "0 0 12px 6px #fff9" }
+        : undefined),
+    };
+
     return (
       <Layout className="articles">
-        <Layout.Sider breakpoint="lg" collapsedWidth="0" width={200}>
-          <Menu
-            mode="inline"
-            style={{ height: "100%" }}
-            selectedKeys={this.props.selectedKeys ? [this.props.selectedKeys] : undefined}
-          >
+        <Layout.Sider breakpoint="lg" zeroWidthTriggerStyle={zeroWidthTriggerStyle} collapsedWidth="0" width={200}>
+          <Menu mode="inline" style={{ height: "100%", borderLeft: "1px solid #e8e8e8" }} >
             {this.props.articles
               ? this.props.articles.map((article) => (
-                <Menu.Item key={article.slug}>
+                <li
+                  className={"ant-menu-item" + (this.props.selectedKeys === article.slug ? " ant-menu-item-selected" : "")}
+                  role="menuitem"
+                  key={article.slug}
+                  style={{ paddingRight: 24 }}
+                >
                   <LinkV2 to={`/Articles/${article.slug}`}>
                     {article.title}
                   </LinkV2>
-                </Menu.Item>
+                </li>
               ))
               : <Skeleton className="sidebar-skeleton" active={true} title={false} paragraph={{ rows: 10, width: ["80%", "70%", "60%", "50%", "90%", "50%", "70%", "80%", "70%"] }} />
             }
