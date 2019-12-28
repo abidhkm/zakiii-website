@@ -11,5 +11,14 @@
   "languages": [
     "en",
     "ar"
-  ]
+  ],
+  "pwa": {
+    "name": "zakiii",
+    "short_name": "Zakiii",
+    "description": "Learn and share knowledge with the community",
+    "background_color": "#fff",
+    "theme_color": "#5c9220",
+    "start_url": "/",
+    "display": "standalone"
+  }
 }

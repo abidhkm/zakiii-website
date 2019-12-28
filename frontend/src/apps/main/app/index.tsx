@@ -1,3 +1,5 @@
+import "src/common/service-worker/pwa";
+
 import NProgress from "nprogress";
 import * as React from "react";
 import { render } from "react-dom";
