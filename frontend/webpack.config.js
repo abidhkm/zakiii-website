@@ -5,7 +5,9 @@ const StringReplacePlugin = require("string-replace-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 // setting up project configs and some vars
 const t9config = require("./t9config.json");
@@ -220,6 +222,24 @@ const pushWebpackConfig = (language, app) => {
           isDev: isDevelopment,
         }
       }),
+      // https://webpack.js.org/guides/progressive-web-application/
+      new WorkboxPlugin.GenerateSW({
+        // these options encourage the ServiceWorkers to get in there fast
+        // and not allow any straggling "old" SWs to hang around
+        clientsClaim: true,
+        skipWaiting: true,
+      }),
+      // https://github.com/arthurbergmz/webpack-pwa-manifest
+      new WebpackPwaManifest({
+        crossorigin: 'use-credentials',
+        icons: [
+          {
+            src: path.resolve('./src/assets/png/logo-compact.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+          }
+        ],
+        ...t9config.pwa,
+      })
     ],
     resolve: {
       // https://webpack.js.org/configuration/resolve/#resolvealias
