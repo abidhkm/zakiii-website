@@ -4,7 +4,7 @@ import * as sm from "sitemap";
 import * as path from "path";
 
 // get languages
-const languages = fse.readdirSync("data").filter((name) => name.length === 2);
+const languages = fse.readdirSync(path.join(__dirname, "../data")).filter((name) => name.length === 2);
 
 const promises = [
   // Static Pages
