@@ -5,6 +5,11 @@ import { Article } from "t9/apps/main/types";
 import "./style";
 
 export const ArticleSene: React.FC<{ article?: Article | null }> = ({ article }) => {
+
+  if (article) {
+    document.title = article.title + " | zakiii";
+  }
+
   return (
     <Layout className="article">
       {article

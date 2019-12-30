@@ -5,6 +5,11 @@ import { Book } from "t9/apps/main/types";
 import "./style";
 
 export const BookSene: React.FC<{ book?: Book | null }> = ({ book }) => {
+
+  if (book) {
+    document.title = book.title + " | zakiii";
+  }
+
   return (
     <Layout className="book">
       {book

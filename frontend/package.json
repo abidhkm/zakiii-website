@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "clear": "rimraf ./out",
+    "clear": "rimraf ./out && rimraf ./functions/html",
     "dev": "yarn clear && NODE_ENV=development webpack-dev-server --config ./webpack.config.js -wd --hot",
+    "fb": "nodemon --watch functions/lib --exec firebase serve",
     "test": "echo 0",
     "build": "yarn clear && NODE_ENV=production webpack --config ./webpack.config.js --display-error-details",
     "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\""
@@ -88,6 +89,7 @@
     "workbox-webpack-plugin": "^4.3.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
     "webpack-dev-server": "^3.9.0"
   }
 }
