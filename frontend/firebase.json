@@ -9,6 +9,14 @@
     ],
     "rewrites": [
       {
+        "source": "{,/ar}/Articles/**",
+        "function": "articles"
+      },
+      {
+        "source": "{,/ar}/Books/**",
+        "function": "books"
+      },
+      {
         "source": "/ar{,/**}",
         "destination": "/ar/index.html"
       },
@@ -16,6 +24,12 @@
         "source": "!/[a-z][a-z]{,/**}",
         "destination": "/index.html"
       }
+    ]
+  },
+  "functions": {
+    "predeploy": [
+      "cd \"$RESOURCE_DIR\" && yarn lint",
+      "cd \"$RESOURCE_DIR\" && yarn build"
     ]
   }
 }
