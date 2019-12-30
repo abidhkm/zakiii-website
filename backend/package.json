@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "dev": "nodemon build.js",
-    "build": "NODE_ENV=production node build.js",
+    "clear": "rimraf ./out && rimraf ../frontend/functions/data",
+    "dev": "nodemon --exec \"yarn clear && node build.js\"",
+    "build": "yarn clear && NODE_ENV=production node build.js",
     "test": "echo 0",
     "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\"",
     "copy-data-2-fe": "cp -r ./out ../frontend/functions/data"
@@ -14,7 +15,8 @@
   },
   "dependencies": {
     "firebase-tools": "^7.11.0",
-    "fs-extra": "^8.1.0"
+    "fs-extra": "^8.1.0",
+    "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
