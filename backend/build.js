@@ -7,6 +7,9 @@ require("./builders");
 
 // if in dev environment, run express
 if (process.env.NODE_ENV === "development") {
+  const exec = require('child_process').exec;
+  exec('yarn copy-data-2-fe');
+
   const express = require('express');
   const app = express();
   const port = 9090;
