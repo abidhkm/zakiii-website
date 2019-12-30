@@ -9,6 +9,10 @@
     ],
     "rewrites": [
       {
+        "source": "/w/xml/main-sitemap.xml",
+        "function": "mainSitemap"
+      },
+      {
         "source": "{,/ar}/Articles/**",
         "function": "articles"
       },
