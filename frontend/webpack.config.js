@@ -64,7 +64,7 @@ const pushWebpackConfig = (language, app) => {
       disableHostCheck: true,
       host: "0.0.0.0",
       port,
-      writeToDisk: false,
+      writeToDisk: true,
       historyApiFallback: {
         rewrites:
           [
@@ -201,8 +201,8 @@ const pushWebpackConfig = (language, app) => {
     },
     // https://webpack.js.org/concepts/output/#multiple-entry-points
     output: {
-      chunkFilename: "w/" + language + "/" + "[name].chunk.[hash].js",
-      filename: "w/" + language + "/" + "[name].[hash].js",
+      chunkFilename: "w/" + language + "/" + `[name].chunk${isDevelopment ? "" : ".[hash]"}.js`,
+      filename: "w/" + language + "/" + `[name]${isDevelopment ? "" : ".[hash]"}.js`,
       path: path.join(__dirname, t9config.bundles.distFolder, t9config.bundles.publicPath),
       publicPath: path.join(t9config.bundles.publicPath),
     },
@@ -211,8 +211,8 @@ const pushWebpackConfig = (language, app) => {
       isDevelopment ? new webpack.HotModuleReplacementPlugin() : () => null,
       // https://github.com/webpack-contrib/mini-css-extract-plugin#advanced-configuration-example
       new MiniCssExtractPlugin({
-        filename: "w/" + language + "/" + "[name].[hash].css",
-        chunkFilename: "w/" + language + "/" + "[id].[hash].css",
+        filename: "w/" + language + "/" + `[name]${isDevelopment ? "" : ".[hash]"}.css`,
+        chunkFilename: "w/" + language + "/" + `[id]${isDevelopment ? "" : ".[hash]"}.css`,
       }),
       // https://webpack.js.org/plugins/html-webpack-plugin/
       new HtmlWebpackPlugin({
@@ -220,7 +220,14 @@ const pushWebpackConfig = (language, app) => {
         template: `pug-loader!./src/apps/${app}/app/index.pug`,
         templateParameters: {
           isDev: isDevelopment,
-        }
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: `../functions/html/${t9config.defaultLanguage !== language ? language + "/" : ""}index.html`,
+        template: `pug-loader!./src/apps/${app}/app/index.pug`,
+        templateParameters: {
+          isDev: isDevelopment,
+        },
       }),
       // https://webpack.js.org/guides/progressive-web-application/
       new WorkboxPlugin.GenerateSW({
@@ -239,7 +246,7 @@ const pushWebpackConfig = (language, app) => {
           }
         ],
         ...t9config.pwa,
-      })
+      }),
     ],
     resolve: {
       // https://webpack.js.org/configuration/resolve/#resolvealias
