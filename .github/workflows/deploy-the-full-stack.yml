@@ -36,6 +36,14 @@ jobs:
         CI: true
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
+    - name: yarn install frontend functions
+      run: |
+        cd frontend/functions
+        yarn install
+      env:
+        CI: true
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
     - name: yarn install, build, deploy frontend
       run: |
         cd frontend
