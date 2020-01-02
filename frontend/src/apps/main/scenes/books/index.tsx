@@ -49,7 +49,7 @@ class BooksScene extends React.Component<BooksScenePropsReduxed, {}> {
           <Route
             exact={true}
             path={window.globals.frontendBaseURL + "/Books/:bookSlug"}
-            render={() => <BookSene book={this.props.book} />}
+            render={() => <BookSene key={location.pathname} book={this.props.book} />}
           />
         </Switch>
       </Layout>

@@ -49,7 +49,7 @@ class ArticlesScene extends React.Component<ArticlesScenePropsReduxed, {}> {
           <Route
             exact={true}
             path={window.globals.frontendBaseURL + "/Articles/:articleSlug"}
-            render={() => <ArticleSene article={this.props.article} />}
+            render={() => <ArticleSene key={location.pathname} article={this.props.article} />}
           />
         </Switch>
       </Layout>
