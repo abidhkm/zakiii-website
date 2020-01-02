@@ -39,6 +39,7 @@ head(lang="{|language code|}")
   meta(name='keywords' content="{|page keywords|}")
   meta(property="og:image" content= require("src/assets/jpg/og-image_{|language code|}.jpg").default)
   meta(name="theme-color" content= "#5c9220")
+  meta(property="fb:app_id" content="2488960424706043")
 
   style.
     body { margin: 0; padding: 0; }
@@ -76,3 +77,5 @@ body(dir=dir)
   div#splash-screen
   div#app-container
     div#splash-screen
+
+script(async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0")
