@@ -4,33 +4,48 @@ import Markdown from "react-markdown";
 import { Article } from "t9/apps/main/types";
 import "./style";
 
-export const ArticleSene: React.FC<{ article?: Article | null }> = ({ article }) => {
-
-  if (article) {
-    document.title = article.title + " | zakiii";
+export class ArticleSene extends React.Component<{ article?: Article | null }, {}> {
+  public componentDidMount() {
+    setTimeout(() => {
+      window.FB.XFBML.parse();
+    }, 3000);
   }
 
-  return (
-    <Layout className="article">
-      {article
-        ? (
-          <React.Fragment key={article.slug}>
-            <img className="image" src={article.image} alt={article.title} />
-            <Layout.Content
-              style={{
-                background: "#fff",
-                padding: "1rem",
-              }}
-            >
-              <h1 className="title">{article.title}</h1>
-              <p className="description">{article.description}</p>
-              <Divider />
-              <Markdown source={article.content} />
-            </Layout.Content>
-          </React.Fragment>
-        )
-        : <Skeleton className="sidebar-skeleton" active={true} paragraph={{ rows: 6, width: ["80%", "70%", "60%", "50%", "90%"] }} />
-      }
-    </Layout>
-  );
-};
+  public render() {
+    const article = this.props.article;
+
+    if (article) {
+      document.title = article.title + " | zakiii";
+    }
+
+    return (
+      <Layout className="article">
+        {article
+          ? (
+            <React.Fragment key={article.slug}>
+              <img className="image" src={article.image} alt={article.title} />
+              <Layout.Content
+                style={{
+                  background: "#fff",
+                  padding: "1rem",
+                }}
+              >
+                <h1 className="title">{article.title}</h1>
+                <p className="description">{article.description}</p>
+                <Divider />
+                <Markdown source={article.content} />
+              </Layout.Content>
+              <div
+                className="fb-comments"
+                data-href={location.origin + location.pathname}
+                data-width="100%"
+                data-numposts="5"
+              />
+            </React.Fragment>
+          )
+          : <Skeleton className="sidebar-skeleton" active={true} paragraph={{ rows: 6, width: ["80%", "70%", "60%", "50%", "90%"] }} />
+        }
+      </Layout>
+    );
+  }
+}
