@@ -148,4 +148,6 @@ I myself, didn't realize what I did accomplish this year, until I started writin
 
 > If you can’t make good, at least make it look good
 
+Also great Thanks to [Amina](https://www.linkedin.com/in/amina-benlouanas-789a5611b/) for helping me with the correction of this article.
+
 Finally, thank you for taking the time to read this article! You rock!
