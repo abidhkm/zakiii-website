@@ -7,8 +7,7 @@
     "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\"",
     "copy-data-2-fe": "cp -r ./out ../frontend/functions/data"
   },
-  "license": "none",
-  "private": true,
+  "license": "MIT",
   "engines": {
     "node": "10",
     "yarn": "1"
