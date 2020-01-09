@@ -2,6 +2,9 @@
 body > #splash-screen {
   display: none;
 }
+#app-container > #splash-screen {
+  display: block;
+}
 
 @import "./variables";
 @import "./font";
