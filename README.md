@@ -8,32 +8,52 @@ The code for [www.zakiii.com](https://www.zakiii.com)
 
 - [Table of Content](#table-of-content)
 - [Installation](#installation)
-  - [Clone the repo](#clone-the-repo)
-  - [Install dependencies using yarn](#install-dependencies-using-yarn)
-  - [Run The Website Locally](#run-the-website-locally)
-    - [Using Terminal (The Hard Way)](#using-terminal-the-hard-way)
-    - [Using VSCode Tasks (The Easy Way)](#using-vscode-tasks-the-easy-way)
+  - [Clone the Repo](#clone-the-repo)
+  - [Install Dependencies Using Yarn](#install-dependencies-using-yarn)
+- [Run The Website Locally](#run-the-website-locally)
+  - [Using Terminal (The Hard Way)](#using-terminal-the-hard-way)
+  - [Using VSCode Tasks (The Easy Way)](#using-vscode-tasks-the-easy-way)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
 
-### Clone the repo
+### Clone the Repo
 
 ```shell
 $ git clone https://github.com/ZibanPirate/zakiii-website.git
 ```
 
-### Install dependencies using yarn
+### Install Dependencies Using Yarn
+
+- Make **sure** you are in the project **root**:
 
 ```shell
-$ cd zakiii-websie
-$ yarn
+$ cd zakiii-website
 ```
 
-### Run The Website Locally
+- Install frontend [template9](https://www.npmjs.com/package/template9) dependencies:
 
-#### Using Terminal (The Hard Way)
+```shell
+$ cd frontend && yarn && cd ..
+```
+
+- Install frontend Firebase Functions dependencies:
+
+```shell
+$ cd frontend/functions && yarn && cd ../..
+```
+
+- Install Backend dependencies:
+
+```shell
+$ cd backend && yarn && cd ..
+```
+
+
+## Run The Website Locally
+
+### Using Terminal (The Hard Way)
 
 **Inside** the project directory, you need to run **4** terminal commands **separately**.
 
@@ -61,7 +81,7 @@ $ cd frontend/functions && yarn fb
 $ cd backend && yarn dev
 ```
 
-#### Using VSCode Tasks (The Easy Way)
+### Using VSCode Tasks (The Easy Way)
 
 This requires you to use VSCode as your IDE. Once you have VSCode setup, inside the project directory, you need to:
 1) Create new file under `.vscode/` folder:
