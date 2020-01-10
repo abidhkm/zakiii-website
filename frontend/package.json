@@ -7,8 +7,7 @@
     "build": "yarn clear && NODE_ENV=production webpack --config ./webpack.config.js --display-error-details",
     "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\""
   },
-  "license": "none",
-  "private": true,
+  "license": "MIT",
   "engines": {
     "node": "10",
     "yarn": "1"

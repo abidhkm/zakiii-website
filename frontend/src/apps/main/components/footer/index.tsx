@@ -99,7 +99,8 @@ export const Footer: React.SFC<{}> = () => {
         ))}
       </Row>
       <Row className="footer bottom">
-        <p>2020 <a>Zakiii</a></p>
+        {/* tslint:disable-next-line: max-line-length */}
+        <p>&copy; 2020 Copyright <a href="https://twitter.com/zibanpirate" target="blank">Zakaria Mansouri</a></p>
       </Row>
     </>
   );
