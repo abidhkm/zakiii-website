@@ -43,17 +43,25 @@ head(lang="{|language code|}")
 
   style.
     body { margin: 0; padding: 0; }
-    #splash-screen {
+    .splash-screen-animated {
       position: absolute; width: 100vw; height: 100vh;
       background: #fff;
+      animation: logo-fade .2s forwards;
+      animation-delay: 1.9s;
     }
-    #splash-screen>div {
-      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transform-origin: 50% 100%;
+    .splash-screen-animated.end {
+      animation: none;
+    }
+    .splash-screen-animated>div {
+      position: absolute; left: 50%; top: 50%; transform: translate(-42%, -50%); transform-origin: 50% 100%;
       width: 200px; height: 200px;
-      animation: rotation 1s forwards;
+      animation: logo 1s forwards;
       animation-delay: .9s;
     }
-    #splash-screen>div::before {
+    .splash-screen-animated.end>div {
+      animation: logo 0s forwards; animation-delay: 0s;
+    }
+    .splash-screen-animated>div::before {
       content: "";
       position: absolute; left: 57%; top: 53%; transform: translate(-150%, -75%);
       opacity: 0;
@@ -67,7 +75,10 @@ head(lang="{|language code|}")
       background-size: contain;
       background-repeat: no-repeat;
     }
-    #splash-screen>div::after {
+    .splash-screen-animated.end>div::before {
+      animation: more 0s forwards; animation-delay: 0s;
+    }
+    .splash-screen-animated>div::after {
       content: "";
       position: absolute; left: 43%; top: 47%;
 
@@ -79,18 +90,29 @@ head(lang="{|language code|}")
       background-size: contain;
       background-repeat: no-repeat;
     }
-    @keyframes rotation {
+    .splash-screen-animated.end>div::after {
+      animation: less 0s forwards;
+    }
+    @keyframes logo {
       from {
-        transform: translate(-50%, -50%);
+        transform: translate(-42%, -50%);
       }
       25%{
-        transform: translate(-50%, -50%) rotate(4deg);
+        transform: translate(-42%, -50%) rotate(4deg);
       }
       75%{
-        transform: translate(-50%, -50%) rotate(-11deg);
+        transform: translate(-42%, -50%) rotate(-11deg);
       }
       to {
-        transform: translate(-50%, -50%) rotate(-10deg);
+        transform: translate(-42%, -50%) rotate(-10deg);
+      }
+    }
+    @keyframes logo-fade {
+      from {
+        display: block; opacity: 1;
+      }
+      to {
+        display: none; opacity: 0;
       }
     }
     @keyframes less {
@@ -113,10 +135,13 @@ head(lang="{|language code|}")
         transform: translate(-50%, -75%);
       }
     }
-    body > #splash-screen {
+    body > .splash-screen-animated {
       z-index: 1000;
     }
-    #app-container > #splash-screen {
+    body > .splash-screen-animated.end {
+      z-index: 999;
+    }
+    #app-container > .splash-screen-animated.end {
       display: none;
     }
     * {
@@ -128,10 +153,12 @@ head(lang="{|language code|}")
 - dir = ("{|language code|}" === "ar" ? "rtl" : "ltr");
 
 body(dir=dir)
-  div#splash-screen
+  div(class="splash-screen-animated end")
+    div
+  div.splash-screen-animated
     div
   div#app-container
-    div#splash-screen
+    div(class="splash-screen-animated end")
       div
 
 script(async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0")

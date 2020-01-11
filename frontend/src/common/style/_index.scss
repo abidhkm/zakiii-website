@@ -1,8 +1,8 @@
 // hide the splash screen when css load
-body > #splash-screen {
+body > .splash-screen-animated.end {
   display: none;
 }
-#app-container > #splash-screen {
+#app-container > .splash-screen-animated.end {
   display: block;
 }
 
