@@ -1,50 +1,53 @@
 @import "../../../../common/style/variables";
 
-.footer.links {
-  background: lighten($black-color, 20);
-  .ant-col {
-    padding: 1rem !important;
-    h3 {
-      color: $white-color;
-      margin: 1rem 0;
-      font-weight: bolder;
-    }
-    .divider {
-      height: 3px;
-      width: 60px;
-      background: $primary-color;
-    }
-    p {
-      color: $white-color;
-      text-align: justify;
-      margin: 1rem 0;
-    }
-    ul {
-      text-align: start;
-      padding: 0;
-      li {
-        list-style: none;
+.footer {
+  overflow: hidden;
+  > .links {
+    background: lighten($black-color, 20);
+    .ant-col {
+      padding: 1rem !important;
+      h3 {
+        color: $white-color;
         margin: 1rem 0;
-        a {
-          color: $white-color;
-          cursor: pointer;
+        font-weight: bolder;
+      }
+      .divider {
+        height: 3px;
+        width: 60px;
+        background: $primary-color;
+      }
+      p {
+        color: $white-color;
+        text-align: justify;
+        margin: 1rem 0;
+      }
+      ul {
+        text-align: start;
+        padding: 0;
+        li {
+          list-style: none;
+          margin: 1rem 0;
+          a {
+            color: $white-color;
+            cursor: pointer;
+          }
         }
       }
     }
+    .ant-col:nth-child(1) > p {
+      max-width: 300px;
+    }
   }
-  .ant-col:nth-child(1) > p {
-    max-width: 300px;
-  }
-}
-.footer.bottom {
-  background: rgba($black-color, 0.9);
-  text-align: center !important;
-  padding: 1rem 0 !important;
-  p {
-    margin: 0 !important;
-    color: rgba($white-color, 0.5);
-    a {
-      color: $white-color;
+  > .bottom {
+    background: rgba($black-color, 0.9);
+    text-align: center !important;
+    padding: 1rem 0 !important;
+    p {
+      margin: 0 !important;
+      color: rgba($white-color, 0.5);
+      a {
+        color: $white-color;
+      }
     }
   }
 }
