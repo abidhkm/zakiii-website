@@ -65,8 +65,8 @@ const footerSections = [
 
 export const Footer: React.SFC<{}> = () => {
   return (
-    <>
-      <Row className="footer links" type="flex" justify="space-around">
+    <div className="footer">
+      <Row className="links" type="flex" justify="space-around">
         <Col lg={2 + 4} sm={12} span={20}>
           <h3>{"{|My goal title|}".toUpperCase()}</h3>
           <div className="divider" />
@@ -98,10 +98,10 @@ export const Footer: React.SFC<{}> = () => {
           </Col>
         ))}
       </Row>
-      <Row className="footer bottom">
+      <Row className="bottom">
         {/* tslint:disable-next-line: max-line-length */}
         <p>&copy; 2020 Copyright <a href="https://twitter.com/zibanpirate" target="blank">Zakaria Mansouri</a></p>
       </Row>
-    </>
+    </div>
   );
 };
