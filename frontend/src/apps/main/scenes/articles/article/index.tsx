@@ -1,4 +1,4 @@
-import { Divider, Layout, Skeleton } from "antd";
+import { Divider, Layout, Skeleton, Button, Affix } from "antd";
 import * as React from "react";
 import Markdown from "react-markdown";
 import { Article } from "t9/apps/main/types";
@@ -30,7 +30,17 @@ export class ArticleSene extends React.Component<{ article?: Article | null }, {
                   padding: "1rem",
                 }}
               >
-                <h1 className="title">{article.title}</h1>
+                <div>
+                  <h1 className="title">{article.title}</h1>
+                  <Affix className="edit" offsetTop={50}>
+                    <a
+                      href={`https://github.com/ZibanPirate/zakiii-website/tree/master/backend/data/{|language code|}/articles/${article.slug}`}
+                      target="blank"
+                    >
+                      <Button shape="circle" icon="edit" size="large" />
+                    </a>
+                  </Affix>
+                </div>
                 <p className="description">{article.description}</p>
                 <Divider />
                 <Markdown source={article.content} />

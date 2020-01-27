@@ -13,6 +13,15 @@
     }
     .title {
       font-size: xx-large;
+      display: inline-block;
+    }
+    .edit {
+      vertical-align: super;
+      @if "{|language code|}" == "ar" {
+        float: left;
+      } @else {
+        float: right;
+      }
     }
     .description {
       font-size: small;

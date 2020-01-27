@@ -125,12 +125,12 @@ const pushWebpackConfig = (language, app) => {
               loader: "postcss-loader",
               options: { plugins: () => [require("precss"), require("autoprefixer")] },
             },
+            "sass-loader",
             {
               loader: StringReplacePlugin.replace({
                 replacements: [{ pattern: /({\|)[A-Za-z0-9\s]+(\|})/ig, replacement: replacement(language, app) }],
               }),
             },
-            "sass-loader",
           ],
         },
         // https://github.com/webpack-contrib/less-loader

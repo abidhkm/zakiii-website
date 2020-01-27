@@ -1,4 +1,4 @@
-import { Divider, Layout, Skeleton } from "antd";
+import { Divider, Layout, Skeleton, Affix, Button } from "antd";
 import * as React from "react";
 import Markdown from "react-markdown";
 import { Book } from "t9/apps/main/types";
@@ -30,7 +30,17 @@ export class BookSene extends React.Component<{ book?: Book | null }, {}> {
                   padding: "1rem",
                 }}
               >
-                <h1 className="title">{book.title}</h1>
+                <div>
+                  <h1 className="title">{book.title}</h1>
+                  <Affix className="edit" offsetTop={50}>
+                    <a
+                      href={`https://github.com/ZibanPirate/zakiii-website/tree/master/backend/data/{|language code|}/books/${book.slug}`}
+                      target="blank"
+                    >
+                      <Button shape="circle" icon="edit" size="large" />
+                    </a>
+                  </Affix>
+                </div>
                 <p className="description">{book.description}</p>
                 <Divider />
                 <Markdown source={book.content} />
