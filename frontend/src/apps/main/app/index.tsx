@@ -70,6 +70,13 @@ const lazyComponents = window.globals.addLazyComponents([
     status: "not-loaded",
     url: { is: "/Developer", exact: false },
   },
+  {
+    component: () => <Loading />,
+    import: () => import(/* webpackChunkName: "covid-19" */ "../scenes/covid-19"),
+    operationName: "loading-covid-19-scene",
+    status: "not-loaded",
+    url: { is: "/COVID-19", exact: false },
+  },
 ]);
 
 window.globals.addLazyOperations([
