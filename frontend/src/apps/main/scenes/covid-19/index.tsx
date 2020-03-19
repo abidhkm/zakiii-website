@@ -5,36 +5,35 @@ import { connect } from "react-redux";
 import "./style";
 
 const cols = [
-  { name: "confirm", label: "Total Cases" },
-  { name: "heal", label: "Total Recovered" },
-  { name: "dead", label: "Total Deaths" },
+  { name: "confirm", label: "All Cases" },
+  { name: "heal", label: "Recovered" },
+  { name: "dead", label: "Deaths" },
 ];
 
-class COVID19Scene extends React.Component<COVID19ScenePropsReduxed, {}> {
-
-  public render() {
-    return (
-      <div className="covid-19">
-        <h2>Coronavirus Live Updates</h2>
-        <Row className="table">
-          {cols.map((field, i) => (
-            <Col className={"col " + field.name} key={"col-" + i} span={8} >
-              <p>{field.label}</p>
-              <h2><CountUp
-                end={this.props.statistics ? (this.props.statistics as any)[field.name] : 0}
+const COVID19Scene = ({ statistics, oldStatistics }: COVID19ScenePropsReduxed) => {
+  return (
+    <div className="covid-19">
+      <h2>Coronavirus Live Updates</h2>
+      <Row className="table">
+        {cols.map((field, i) => (
+          <Col className={"col " + field.name} key={"col-" + i} span={8} >
+            <p>{field.label}</p>
+            <h2>
+              <CountUp
+                start={oldStatistics ? (oldStatistics as any)[field.name] : 0}
+                end={statistics ? (statistics as any)[field.name] : 0}
                 separator=","
               />
-              </h2>
-            </Col>
-          ))}
-        </Row>
-      </div>
-    );
-  }
-}
+            </h2>
+          </Col>
+        ))}
+      </Row>
+      {statistics ? <small>Last Updated: {statistics.lastUpdateTime}</small> : null}
+    </div>
+  );
+};
 
 interface COVID19ScenePropsReduxed extends COVID19SceneProps {
-
 }
 
 export interface COVID19SceneProps {
@@ -43,6 +42,11 @@ export interface COVID19SceneProps {
     dead: number;
     heal: number;
     lastUpdateTime: string;
+  } | null;
+  oldStatistics: {
+    confirm: number;
+    dead: number;
+    heal: number;
   } | null;
 }
 

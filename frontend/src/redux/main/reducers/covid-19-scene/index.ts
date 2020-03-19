@@ -3,6 +3,7 @@ import { actionType } from "t9/redux/main/constants";
 
 export const covid19Scene = (
   state: COVID19SceneProps = {
+    oldStatistics: null,
     statistics: null,
   },
   action: {
