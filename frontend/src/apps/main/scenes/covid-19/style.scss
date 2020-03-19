@@ -1,3 +1,44 @@
+@import "../../../../common/style/variables";
+
 .covid-19 {
   text-align: center;
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vw;
+  position: relative;
+  margin-top: -$navbarHeight;
+  padding-top: $navbarHeight - $transition-vertical-distance;
+
+  > h2 {
+    margin: 2rem;
+  }
+  .table {
+    margin: 1rem auto;
+    max-width: 480px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .col {
+    padding: 1rem;
+    font-weight: bold;
+    border: 1px solid #fff;
+  }
+  .confirm {
+    background: rgb(254, 239, 238);
+    h2 {
+      color: rgb(204, 30, 30);
+    }
+  }
+  .heal {
+    background: rgb(233, 251, 238);
+    h2 {
+      color: rgb(24, 139, 81);
+    }
+  }
+  .dead {
+    background: rgb(246, 246, 246);
+    h2 {
+      color: rgb(78, 90, 101);
+    }
+  }
 }

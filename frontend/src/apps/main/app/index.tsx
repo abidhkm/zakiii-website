@@ -17,6 +17,7 @@ import { resetSelectedArticle } from "t9/redux/main/actions/articles-scene";
 import { fetchBook } from "t9/redux/main/actions/book";
 import { fetchBooks } from "t9/redux/main/actions/books";
 import { resetSelectedBook } from "t9/redux/main/actions/books-scene";
+import { fetchStatistics } from "t9/redux/main/actions/covid-19-scene";
 import { fetchRecentArticles, fetchRecentBooks, fetchRecentProjects } from "t9/redux/main/actions/landing-scene";
 import { fetchProjects } from "t9/redux/main/actions/projects-scene";
 import { fetchFavoriteBooks } from "t9/redux/main/actions/reader-scene";
@@ -139,6 +140,12 @@ window.globals.addLazyOperations([
     operationName: "fetch-book",
     repeatable: true, status: "not-called",
     url: { is: "/Projects", exact: false },
+  },
+  {
+    actions: [fetchStatistics],
+    operationName: "fetch-book",
+    repeatable: true, status: "not-called",
+    url: { is: "/COVID-19", exact: false },
   },
 ]);
 
