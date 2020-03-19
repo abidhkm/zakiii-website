@@ -143,8 +143,8 @@ window.globals.addLazyOperations([
   },
   {
     actions: [fetchStatistics],
-    operationName: "fetch-book",
-    repeatable: true, status: "not-called",
+    operationName: "fetch-covid-19-status",
+    repeatable: false, status: "not-called",
     url: { is: "/COVID-19", exact: false },
   },
 ]);
