@@ -11,7 +11,7 @@ export const covid19 = functions.https.onRequest(async (request, response) => {
     confirm: gStatistics.confirm + cStatistics.confirm,
     heal: gStatistics.heal + cStatistics.heal,
     dead: gStatistics.dead + cStatistics.dead,
-    lastUpdateTime,
+    lastUpdateTime: lastUpdateTime + " GMT+8",
   }).end();
 
 });
