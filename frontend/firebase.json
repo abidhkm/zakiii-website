@@ -9,6 +9,10 @@
     ],
     "rewrites": [
       {
+        "source": "/api/covid19",
+        "function": "covid19"
+      },
+      {
         "source": "/w/xml/main-sitemap.xml",
         "function": "mainSitemap"
       },
