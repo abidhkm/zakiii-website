@@ -25,6 +25,10 @@
         "function": "books"
       },
       {
+        "source": "{,/ar}/COVID-19{,/**}",
+        "function": "covid19Page"
+      },
+      {
         "source": "/ar{,/**}",
         "destination": "/ar/index.html"
       },

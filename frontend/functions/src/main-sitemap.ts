@@ -17,6 +17,7 @@ const promises = [
       "/Articles",
       "/Books",
       "/Projects",
+      "/COVID-19",
     ];
     for (const language of languages) {
       for (const url of urls) {
