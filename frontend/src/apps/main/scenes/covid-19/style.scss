@@ -3,25 +3,36 @@
 .covid-19 {
   text-align: center;
   min-height: 100vh;
-  height: 100vh;
-  max-height: 100vw;
   position: relative;
   margin-top: -$navbarHeight;
-  padding-top: $navbarHeight - $transition-vertical-distance;
+  padding-top: $navbarHeight;
 
   > h2 {
-    margin: 2rem;
+    margin: 1rem 0 0;
+    color: #716e6e;
   }
+
+  small {
+    padding: 0 0 0.3rem 0;
+    display: block;
+  }
+  h4 {
+    margin: 0.3rem;
+  }
+
   .table {
-    margin: 1rem auto;
     max-width: 480px;
+    margin: auto;
     border-radius: 8px;
     overflow: hidden;
   }
   .col {
-    padding: 1rem 0;
+    padding: 0.3rem 0;
     font-weight: bold;
     border: 1px solid #fff;
+    > p {
+      margin: 0;
+    }
   }
   .confirm {
     background: rgb(254, 239, 238);

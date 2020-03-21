@@ -16,11 +16,9 @@ export const fetchStatistics = (cb?: OpsCB) => ((dispatch: DI, getState: MSSI) =
 
         dispatch({
           payload: {
-            oldStatistics: getState().covid19Scene.statistics,
-            statistics: {
-              ...res.data,
-              lastUpdateTime: (hours > 0 ? `${hours}h ` : "") + `${minutes}m ago`,
-            },
+            lastUpdateTime: (hours > 0 ? `${hours}h ` : "") + `${minutes}m ago`,
+            oldStats: getState().covid19Scene.stats,
+            stats: res.data.stats,
           },
           type: actionType.UPDATE_COVID19_SCENE,
         });
