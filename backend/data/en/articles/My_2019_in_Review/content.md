@@ -108,12 +108,6 @@ Here's my review of the first French book I read:
 
 👉 [The Stranger (L'Étranger) by Albert Camus](/Books/The_Stranger_(L'Étranger)_by_Albert_Camus) 👈
 
-### L’Horizon à l’Envers
-
-I’m currently reading this book, so stay tuned for my review here:
-
-👉 [The Upside Down Horizon (L’Horizon à L’Envers) by Marc Levy](/Books/The_Upside_Down_Horizon_(L’Horizon_à_L’Envers)_by_Marc_Levy) 👈
-
 ## Switched from Gitlab to GitHub
 
 Since Github introduced Unlimited private repos, along with Github Actions CI for private repos with MacOS and Windows support, I had no reason to stick with Gitlab anymore, though there was a fundamental feature that GitLab has and Github doesn't, which is **project management** board, but after some research, I found ZenHub, which does the same thing if not better, and integrates well with Github, in fact they require u to have a Github account.
