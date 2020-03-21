@@ -1,9 +1,14 @@
 import * as functions from 'firebase-functions';
-import axios from "axios";
+import * as rp from "request-promise-native";
 
 export const covid19 = functions.https.onRequest(async (request, response) => {
-  const gStatistics = JSON.parse((await (await axios.get("https://view.inews.qq.com/g2/getOnsInfo?name=disease_other")).data).data).globalStatis;
-  const data = JSON.parse((await (await axios.get("https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5")).data).data);
+
+  const [gRes, cRes] = await Promise.all([
+    rp({ uri: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_other", json: true }),
+    rp({ uri: "https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5", json: true }),
+  ]);
+  const gStatistics = JSON.parse(gRes.data).globalStatis;
+  const data = JSON.parse(cRes.data);
   const cStatistics = data.chinaTotal;
   const lastUpdateTime = data.lastUpdateTime;
 
