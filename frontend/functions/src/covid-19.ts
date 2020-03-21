@@ -16,11 +16,16 @@ export const covid19 = functions.https.onRequest(async (request, response) => {
   const uae = (gData.foreignList as Array<any>).find((country) => country.name === "阿联酋");
 
   response.json({
-    confirm: gData.globalStatis.confirm + cStatistics.confirm,
-    heal: gData.globalStatis.heal + cStatistics.heal,
-    dead: gData.globalStatis.dead + cStatistics.dead,
     lastUpdateTime: lastUpdateTime + " GMT+8",
-    countries: [
+    stats: [
+      {
+        code: "all",
+        name_en: "World Wide",
+        name_ar: "جميع أنحاء العالم",
+        confirm: gData.globalStatis.confirm + cStatistics.confirm,
+        heal: gData.globalStatis.heal + cStatistics.heal,
+        dead: gData.globalStatis.dead + cStatistics.dead,
+      },
       {
         code: "dz",
         name_en: "Algeria",
@@ -31,7 +36,7 @@ export const covid19 = functions.https.onRequest(async (request, response) => {
       },
       {
         code: "uae",
-        name_en: "Algeria",
+        name_en: "UAE",
         name_ar: "الإمارات العربية المتحدة",
         confirm: uae.confirm,
         heal: uae.heal,
