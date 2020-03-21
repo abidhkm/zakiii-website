@@ -8,7 +8,7 @@ export const covid19Page = functions.https.onRequest((request, response) => {
   const pageInfo = {
     title: "Coronavirus Live Updates",
     description: "Global case statistics for coronavirus, updated live. Read and share the latest information.",
-    image: "https://ncov.totok.ai/pic/coronavirus_share.png",
+    image: "https://images.unsplash.com/photo-1583324113626-70df0f4deaab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
   };
   const htmlPath = path.join(__dirname, `../html/${language}index.html`);
   fs.readFile(htmlPath, { encoding: 'utf-8' }, (err, data) => {
