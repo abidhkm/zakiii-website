@@ -39,7 +39,7 @@ jobs:
     - name: yarn install frontend functions
       run: |
         cd frontend/functions
-        yarn install
+        yarn install --ignore-engines
       env:
         CI: true
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
