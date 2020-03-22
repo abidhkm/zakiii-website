@@ -6,8 +6,14 @@ import "./scroll";
 import "./style";
 
 const navButtons = [
-  { icon: "phone", title: "{|Call me|}", subTitle: "{|Phone number|}", href: "Tel:+213559790024" },
-  { icon: "mail", title: "{|Email me|}", subTitle: "contact@zakiii.com", href: "mailto:contact@zakiii.com" },
+  { icon: "deployment-unit", title: "COVID-19", subTitle: "Live statistics", href: "/COVID-19" },
+  {
+    anchor: true,
+    href: "mailto:contact@zakiii.com",
+    icon: "mail",
+    subTitle: "contact@zakiii.com",
+    title: "{|Email me|}",
+  },
 ];
 
 const menuButtons = [
@@ -27,13 +33,18 @@ const NavBarNoRedux: React.SFC = () => {
           {navButtons.map((navButton, i) => (
             <React.Fragment key={`navBtn-${i}`}>
               <td className="navButtonIcon">
-                <a href={navButton.href}><Icon type={navButton.icon} theme="outlined" /></a>
+                <LinkV2
+                  anchor={navButton.anchor}
+                  to={navButton.href}
+                >
+                  <Icon type={navButton.icon} theme="outlined" />
+                </LinkV2>
               </td>
               <td className="navButton">
-                <a href={navButton.href}>
+                <LinkV2 anchor={navButton.anchor} to={navButton.href}>
                   <div>{navButton.title}</div>
                   <div>{navButton.subTitle}</div>
-                </a>
+                </LinkV2>
               </td>
             </React.Fragment>
           ))}
