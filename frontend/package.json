@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": "10",
+    "node": ">=8",
     "yarn": "1"
   },
   "browserslist": {

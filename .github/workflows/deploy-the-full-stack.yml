@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [8.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -39,7 +39,7 @@ jobs:
     - name: yarn install frontend functions
       run: |
         cd frontend/functions
-        yarn install --ignore-engines
+        yarn install
       env:
         CI: true
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
