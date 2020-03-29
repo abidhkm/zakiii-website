@@ -7,6 +7,16 @@
   margin-top: -$navbarHeight;
   padding-top: $navbarHeight;
 
+  > .bg {
+    @media screen and (max-width: $small) {
+      background-image: url(../../../../assets/jpg/cat-sleeping.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      height: 400px;
+    }
+  }
+
   > h2 {
     margin: 1rem 0 0;
     color: #716e6e;

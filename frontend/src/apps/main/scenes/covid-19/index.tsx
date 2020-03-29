@@ -44,6 +44,7 @@ const COVID19Scene = ({ stats, oldStats, lastUpdateTime }: COVID19ScenePropsRedu
         ) :
         "Loading"
       }
+      <div className="bg" />
     </div>
   );
 };
