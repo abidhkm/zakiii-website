@@ -1,10 +1,10 @@
 import * as functions from 'firebase-functions';
-import * as fse from "fs-extra";
 import * as sm from "sitemap";
-import * as path from "path";
+import axios from "axios";
 
 // get languages
-const languages = fse.readdirSync(path.join(__dirname, "../data")).filter((name) => name.length === 2);
+const languages = ["en", "ar"];
+const backendURL = process.env.NODE_ENV === "development" ? "http://127.0.0.1:9090" : "https://data.zakiii.com";
 
 const promises = [
   // Static Pages
@@ -27,29 +27,27 @@ const promises = [
     resolve(urlsInfo);
   }),
   // Articles
-  new Promise((resolve) => {
+  new Promise(async (resolve) => {
     const urlsInfo = [];
-    for (const language of languages) {
-      if (!fse.existsSync(path.join(__dirname, `../data/${language}/articles/list.json`))) continue;
-
-      const articles = fse.readJsonSync(path.join(__dirname, `../data/${language}/articles/list.json`));
-      for (const article of articles) {
-        urlsInfo.push((language === "en" ? "" : "/" + language) + '/Articles/' + article.slug);
-      }
-    }
+    for (const language of languages)
+      try {
+        const { data: articles } = await axios.get(backendURL + "/" + language + "/articles/list.json");
+        for (const article of articles) {
+          urlsInfo.push((language === "en" ? "" : "/" + language) + '/Articles/' + article.slug);
+        }
+      } catch (error) { }
     resolve(urlsInfo);
   }),
   // Books
-  new Promise((resolve) => {
+  new Promise(async (resolve) => {
     const urlsInfo = [];
-    for (const language of languages) {
-      if (!fse.existsSync(path.join(__dirname, `../data/${language}/books/list.json`))) continue;
-
-      const books = fse.readJsonSync(path.join(__dirname, `../data/${language}/books/list.json`));
-      for (const book of books) {
-        urlsInfo.push((language === "en" ? "" : "/" + language) + '/Books/' + book.slug);
-      }
-    }
+    for (const language of languages)
+      try {
+        const { data: books } = await axios.get(backendURL + "/" + language + "/books/list.json");
+        for (const book of books) {
+          urlsInfo.push((language === "en" ? "" : "/" + language) + '/Books/' + book.slug);
+        }
+      } catch (error) { }
     resolve(urlsInfo);
   }),
 ];
