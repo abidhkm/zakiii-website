@@ -3,9 +3,7 @@
     "clear": "rimraf ./out && rimraf ../frontend/functions/data",
     "dev": "nodemon --exec \"yarn clear && node build.js\"",
     "build": "yarn clear && NODE_ENV=production node build.js",
-    "test": "echo 0",
-    "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "copy-data-2-fe": "cp -r ./out ../frontend/functions/data"
+    "deploy": "firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "license": "MIT",
   "engines": {

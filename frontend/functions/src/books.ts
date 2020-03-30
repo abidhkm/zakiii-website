@@ -1,20 +1,24 @@
 import * as functions from 'firebase-functions';
 import * as fs from "fs";
 import * as path from "path";
+import axios from "axios";
 
-export const books = functions.https.onRequest((request, response) => {
+const backendURL = process.env.NODE_ENV === "development" ? "http://127.0.0.1:9090" : "https://data.zakiii.com";
+
+export const books = functions.https.onRequest(async (request, response) => {
   const language = request.path.startsWith("/ar") ? "ar/" : "";
   const bookSlug = decodeURI(request.path).split("/")[language ? 3 : 2];
-  const bookDataPath = path.join(__dirname, `../data/${language || "en/"}/books/${bookSlug}.json`);
 
-  if (!fs.existsSync(bookDataPath)) {
-    console.log(bookDataPath + " | not found");
-
+  let res;
+  try {
+    res = await axios.get(backendURL + "/" + language + "/books/" + bookSlug + ".json");
+  } catch (error) {
+    console.log(bookSlug + " | not found");
     response.writeHead(302, { 'Location': `/${language}Books` });
     response.end();
     return;
   }
-  const book = require(bookDataPath);
+  const book = res.data;
   const htmlPath = path.join(__dirname, `../html/${language}index.html`);
   fs.readFile(htmlPath, { encoding: 'utf-8' }, (err, data) => {
     if (!err) {

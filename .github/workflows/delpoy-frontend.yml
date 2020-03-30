@@ -1,0 +1,35 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - "frontend/**"
+    - "fullstack/**"
+    - ".github/workflows/deploy-frontend.yml"
+
+jobs:
+  Build-Test-Deploy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: yarn install, build, test and deploy
+      run: |
+        cd frontend
+        yarn install --production
+        yarn build
+        yarn deploy
+      env:
+        CI: true
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

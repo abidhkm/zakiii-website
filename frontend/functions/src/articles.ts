@@ -1,20 +1,24 @@
 import * as functions from 'firebase-functions';
 import * as fs from "fs";
 import * as path from "path";
+import axios from "axios";
 
-export const articles = functions.https.onRequest((request, response) => {
+const backendURL = process.env.NODE_ENV === "development" ? "http://127.0.0.1:9090" : "https://data.zakiii.com";
+
+export const articles = functions.https.onRequest(async (request, response) => {
   const language = request.path.startsWith("/ar") ? "ar/" : "";
   const articleSlug = decodeURI(request.path).split("/")[language ? 3 : 2];
-  const articleDataPath = path.join(__dirname, `../data/${language || "en/"}/articles/${articleSlug}.json`);
 
-  if (!fs.existsSync(articleDataPath)) {
-    console.log(articleDataPath + " | not found");
-
+  let res;
+  try {
+    res = await axios.get(backendURL + "/" + language + "/articles/" + articleSlug + ".json");
+  } catch (error) {
+    console.log(articleSlug + " | not found");
     response.writeHead(302, { 'Location': `/${language}Articles` });
     response.end();
     return;
   }
-  const article = require(articleDataPath);
+  const article = res.data;
   const htmlPath = path.join(__dirname, `../html/${language}index.html`);
   fs.readFile(htmlPath, { encoding: 'utf-8' }, (err, data) => {
     if (!err) {
