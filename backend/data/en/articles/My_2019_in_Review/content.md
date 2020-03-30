@@ -44,11 +44,19 @@ I can safely say: this short stroy is my favorite so far, you going to want to r
 
 ### The Winner Stands Alone
 
-I like this one too, I kind of relate to it somehow, maybe I’m not a winner, but I definitely stand alone. This novel by Paulo Coelho is one of my favorite, it talks about the fascinating worlds of fortune and celebrity. In fact this is the last English book I read in the last year, before I switched to French books.
+I like this one too, I kind of relate to it somehow, maybe I’m not a winner, but I definitely stand alone. This novel by Paulo Coelho is one of my favorite, it talks about the fascinating worlds of fortune and celebrity.
 
 Here's my review of the book:
 
 👉 [The Winner Stands Alone by Paulo Coelho](/Books/The_Winner_Stands_Alone_by_Paulo_Coelho) 👈
+
+### The Old Man and The Sea
+
+This is a short one, by the american author Ernest Hemingway, with **persistence**, **mental toughness**, and **resilience** as the message imparted in the story.
+
+Read more here:
+
+👉 [The Old Man and The Sea by Ernest Hemingway](/Books/The_Old_Man_and_The_Sea_by_Ernest_Hemingway) 👈
 
 ## Started Reading Manga (in English)
 
