@@ -24,7 +24,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: yarn install, build, test and deploy
+
+    - name: yarn install frontend functions
+      run: |
+        cd frontend/functions
+        yarn install
+      env:
+        CI: true
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+    - name: yarn install, build and deploy frontend
       run: |
         cd frontend
         yarn install --production
